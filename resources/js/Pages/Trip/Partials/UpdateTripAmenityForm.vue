@@ -49,31 +49,44 @@ const storeTripAmenity = () => {
             <div class="col-span-6" v-if="trip.amenity[0]">
                 <ul class="space-y-5">
                     <!--                    <template v-for="amenity in trip.amenity">-->
+<!--                    <li class="">-->
+<!--                        <h4 class="font-medium capitalize"><i-->
+<!--                            class="fa-regular fa-check font-normal text-green-600 mr-2"/>Include</h4>-->
+<!--                        <ul class="text-gray-600 ml-10 list-disc">-->
+<!--                            <template v-for="include in trip.amenity">-->
+<!--                                <li v-if="include.group_id === 1" class="">-->
+<!--                                    {{ include.name }}-->
+<!--                                </li>-->
+<!--                            </template>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                    <div class="py-1">-->
+<!--                        <div class="border-t border-gray-300"/>-->
+<!--                    </div>-->
+<!--                    <li class="">-->
+<!--                        <h4 class="font-medium capitalize"><i-->
+<!--                            class="fa-regular fa-x font-normal text-red-600 mr-2"/>Exclude</h4>-->
+<!--                        <ul class="text-gray-600 ml-10 list-disc">-->
+<!--                            <template v-for="exclude in trip.amenity">-->
+<!--                                <li v-if="exclude.group_id === 2" class="">-->
+<!--                                    {{ exclude.name }}-->
+<!--                                </li>-->
+<!--                            </template>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+
                     <li class="">
                         <h4 class="font-medium capitalize"><i
                             class="fa-regular fa-check font-normal text-green-600 mr-2"/>Include</h4>
                         <ul class="text-gray-600 ml-10 list-disc">
                             <template v-for="include in trip.amenity">
-                                <li v-if="include.group_id === 1" class="">
+                                <li class="">
                                     {{ include.name }}
                                 </li>
                             </template>
                         </ul>
                     </li>
-                    <div class="py-1">
-                        <div class="border-t border-gray-300"/>
-                    </div>
-                    <li class="">
-                        <h4 class="font-medium capitalize"><i
-                            class="fa-regular fa-x font-normal text-red-600 mr-2"/>Exclude</h4>
-                        <ul class="text-gray-600 ml-10 list-disc">
-                            <template v-for="exclude in trip.amenity">
-                                <li v-if="exclude.group_id === 2" class="">
-                                    {{ exclude.name }}
-                                </li>
-                            </template>
-                        </ul>
-                    </li>
+
                     <div class="py-1">
                         <div class="border-t border-gray-300"/>
                     </div>

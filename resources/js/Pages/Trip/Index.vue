@@ -48,7 +48,7 @@ function formatPriceX(value) {
                                          class="object-cover h-80 w-full rounded-t-2xl border-b border-gray-300"
                                          :src="trip.media[0].original_url" alt=""/>
                                     <div v-else class="h-80 rounded-t-2xl border-b border-gray-300"/>
-                                    <Link v-if="trip.user_id === $page.props.user.id" :href="route('trip.edit', trip.slug)" class="absolute top-1 right-1 bg-green-100 hover:bg-green-300 border border-green-300 rounded-2xl h-8 w-8 flex justify-center items-center">
+                                    <Link :href="route('trip.edit', trip.slug)" class="absolute top-1 right-1 bg-green-100 hover:bg-green-300 border border-green-300 rounded-2xl h-8 w-8 flex justify-center items-center">
                                         <i class="fa-regular fa-pen text-green-800" />
                                     </Link>
                                 </div>
