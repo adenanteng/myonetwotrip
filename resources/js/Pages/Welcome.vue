@@ -69,7 +69,7 @@ const breakpoints = {
                 <div
                     class="px-4 sm:px-6 sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center">
                     <div>
-                        <h1 class="text-4xl lg:text-5xl xl:text-6xl tracking-tight font-extrabold text-white">
+                        <h1 class="text-4xl mt-20 lg:text-5xl xl:text-6xl tracking-tight font-extrabold text-white">
                             INDONESIA
                         </h1>
                         <p class="text-gray-100 mt-1">Anim aute id magna

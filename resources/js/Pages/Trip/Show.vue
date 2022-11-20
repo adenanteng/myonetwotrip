@@ -184,26 +184,26 @@ function formatPriceX(value) {
                                 <div class="mt-2 prose prose-sm text-gray-500">
                                     <ul role="list">
                                         <template v-for="include in trip.amenity" :key="include">
-                                            <li>
+                                            <li v-if="include.group_id == 1">
                                                 {{ include.name }}
                                             </li>
                                         </template>
                                     </ul>
                                 </div>
                             </div>
-<!--                            <div>-->
-<!--                                <h3 class="text-sm font-medium text-gray-900"><i-->
-<!--                                    class="fa-regular fa-x text-red-600 mr-2"/>Exclude</h3>-->
-<!--                                <div class="mt-2 prose prose-sm text-gray-500">-->
-<!--                                    <ul role="list">-->
-<!--                                        <template v-for="exclude in trip.amenity" :key="exclude">-->
-<!--                                            <li v-if="exclude.group_id === 2">-->
-<!--                                                {{ exclude.name }}-->
-<!--                                            </li>-->
-<!--                                        </template>-->
-<!--                                    </ul>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-900"><i
+                                    class="fa-regular fa-x text-red-600 mr-2"/>Exclude</h3>
+                                <div class="mt-2 prose prose-sm text-gray-500">
+                                    <ul role="list">
+                                        <template v-for="exclude in trip.amenity" :key="exclude">
+                                            <li v-if="exclude.group_id == 2">
+                                                {{ exclude.name }}
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="border-t border-gray-200 mt-10 pt-10">
@@ -219,7 +219,8 @@ function formatPriceX(value) {
                                         {{ trip.user.name }}
                                     </p>
                                     {{ trip.user.email }}
-                                    <Link :href="route('trip.edit', trip.slug)"
+                                    <Link v-if="trip.user_id == $page.props.user.id"
+                                          :href="route('trip.edit', trip.slug)"
                                           class="underline text-sm hover:text-gray-900">
                                         Edit postingan
                                     </Link>

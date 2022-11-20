@@ -11,7 +11,7 @@ import Welcome from '@/Components/Welcome.vue';
             </h2>
         </template>
 
-        <div class="border border-gray-300 bg-white/25 overflow-hidden shadow-xl sm:rounded-2xl">
+        <div class="border border-gray-300 bg-white/25 overflow-hidden shadow-xl rounded-2xl">
             <Welcome/>
         </div>
     </AppLayout>

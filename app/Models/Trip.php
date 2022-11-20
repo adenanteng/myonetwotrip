@@ -65,7 +65,7 @@ class Trip extends Model implements HasMedia
         self::SIX => '6 orang',
         self::EIGHT => '8 orang',
         self::TEN => '10 0rang',
-        self::TWENTY => 'Sampai dengan 20 orang',
+        self::TWENTY => '20 orang',
     ];
 
     const LAMPUNG = 1;

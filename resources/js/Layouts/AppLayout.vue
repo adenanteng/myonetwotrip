@@ -212,52 +212,57 @@ const logout = () => {
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}"
                      class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink :href="route('welcome')" :active="route().current('welcome')">
+                            Beranda
+                        </ResponsiveNavLink>
+
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('trip.index')" :active="route().current('trip.index')">
-                            Wisata
+
+                        <ResponsiveNavLink :href="route('trip.index')" :active="$page.component.startsWith('Trip')">
+                            Destinas
                         </ResponsiveNavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200">
-<!--                        <div class="flex items-center px-4">-->
-<!--                            <div v-if="$page.props.jetstream.managesProfilePhotos" class="shrink-0 mr-3">-->
-<!--                                <img class="h-10 w-10 rounded-full object-cover"-->
-<!--                                     :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name">-->
-<!--                            </div>-->
+                        <div v-if="$page.props.user" class="flex items-center px-4 mb-3">
+                            <div class="shrink-0 mr-3">
+                                <img class="h-10 w-10 rounded-full object-cover"
+                                     :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name">
+                            </div>
 
-<!--                            <div>-->
-<!--                                <div class="font-medium text-base text-gray-800">-->
-<!--                                    {{ $page.props.user.name }}-->
-<!--                                </div>-->
-<!--                                <div class="font-medium text-sm text-gray-500">-->
-<!--                                    {{ $page.props.user.email }}-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                            <div>
+                                <div class="font-medium text-base text-gray-800">
+                                    {{ $page.props.user.name }}
+                                </div>
+                                <div class="font-medium text-sm text-gray-500">
+                                    {{ $page.props.user.email }}
+                                </div>
+                            </div>
+                        </div>
 
-                        <div class="mt-3 space-y-1">
-                            <ResponsiveNavLink :href="route('profile.show')" :active="route().current('profile.show')">
-                                Profile
-                            </ResponsiveNavLink>
-
-                            <ResponsiveNavLink v-if="$page.props.jetstream.hasApiFeatures"
-                                               :href="route('api-tokens.index')"
-                                               :active="route().current('api-tokens.index')">
-                                API Tokens
-                            </ResponsiveNavLink>
-
-                            <!-- Authentication -->
-                            <form method="POST" @submit.prevent="logout">
-                                <ResponsiveNavLink as="button">
-                                    Log Out
-                                </ResponsiveNavLink>
-                            </form>
-
+                        <div class="space-y-1">
                             <!-- Team Management -->
                             <template v-if="$page.props.user">
+                                <ResponsiveNavLink :href="route('profile.show')" :active="route().current('profile.show')">
+                                    Profile
+                                </ResponsiveNavLink>
+
+                                <ResponsiveNavLink v-if="$page.props.user"
+                                                   :href="route('api-tokens.index')"
+                                                   :active="route().current('api-tokens.index')">
+                                    API Tokens
+                                </ResponsiveNavLink>
+
+                                <!-- Authentication -->
+                                <form method="POST" @submit.prevent="logout">
+                                    <ResponsiveNavLink as="button">
+                                        Log Out
+                                    </ResponsiveNavLink>
+                                </form>
+
                                 <div class="border-t border-gray-200" />
 
                                 <div class="block px-4 py-2 text-xs text-gray-400">
@@ -299,6 +304,16 @@ const logout = () => {
                                         </ResponsiveNavLink>
                                     </form>
                                 </template>
+                            </template>
+
+                            <template v-else>
+                                <ResponsiveNavLink :href="route('login')" >
+                                    Masuk
+                                </ResponsiveNavLink>
+
+                                <ResponsiveNavLink :href="route('register')" >
+                                    Daftar
+                                </ResponsiveNavLink>
                             </template>
                         </div>
                     </div>

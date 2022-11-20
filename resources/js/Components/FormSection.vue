@@ -8,7 +8,7 @@ const hasActions = computed(() => !! useSlots().actions);
 </script>
 
 <template>
-    <div class="md:grid md:grid-cols-3 md:gap-6">
+    <div class="md:grid md:grid-cols-3 md:gap-6 mt-16 sm:mt-0">
         <SectionTitle>
             <template #title>
                 <slot name="title" />
@@ -22,14 +22,14 @@ const hasActions = computed(() => !! useSlots().actions);
             <form @submit.prevent="$emit('submitted')">
                 <div
                     class="px-4 py-5 bg-white/25 sm:p-6 shadow-lg border border-gray-300"
-                    :class="hasActions ? 'sm:rounded-tl-2xl sm:rounded-tr-2xl' : 'sm:rounded-2xl'"
+                    :class="hasActions ? 'rounded-tl-2xl rounded-tr-2xl' : 'rounded-2xl'"
                 >
                     <div class="grid grid-cols-6 gap-6">
                         <slot name="form" />
                     </div>
                 </div>
 
-                <div v-if="hasActions" class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6 shadow-lg sm:rounded-bl-2xl sm:rounded-br-2xl border-b border-x border-gray-300">
+                <div v-if="hasActions" class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6 shadow-lg rounded-bl-2xl rounded-br-2xl border-b border-x border-gray-300">
                     <slot name="actions" />
                 </div>
             </form>
