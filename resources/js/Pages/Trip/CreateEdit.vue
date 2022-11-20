@@ -6,6 +6,7 @@ import SectionBorder from '@/Components/SectionBorder.vue';
 import UpdateTripInformationForm from "@/Pages/Trip/Partials/UpdateTripInformationForm.vue";
 import UpdateTripItineraryForm from "@/Pages/Trip/Partials/UpdateTripItineraryForm.vue";
 import UpdateTripPhotoForm from "@/Pages/Trip/Partials/UpdateTripPhotoForm.vue";
+import UpdateTripAmenityForm from "@/Pages/Trip/Partials/UpdateTripAmenityForm.vue";
 
 defineProps({
     confirmsTwoFactorAuthentication: Boolean,
@@ -30,6 +31,12 @@ defineProps({
 
                 <div v-if="$page.props.trip">
                     <UpdateTripPhotoForm :trip="$page.props.trip" />
+
+                    <SectionBorder />
+                </div>
+
+                <div v-if="$page.props.trip">
+                    <UpdateTripAmenityForm :trip="$page.props.trip" />
 
                     <SectionBorder />
                 </div>

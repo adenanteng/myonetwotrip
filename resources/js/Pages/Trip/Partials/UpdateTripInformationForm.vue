@@ -20,7 +20,11 @@ const props = defineProps({
 const form = useForm({
     name: props.trip.name ?? null,
     desc: props.trip.desc ?? null,
+    desc2: props.trip.desc2 ?? null,
+    desc3: props.trip.desc3 ?? null,
     location: props.trip.location ?? null,
+    duration_id: props.trip.duration_id ?? null,
+    person_id: props.trip.person_id ?? null,
     price: props.trip.price ?? null,
     category_id: props.trip.category_id ?? null,
     city_id: props.trip.city_id ?? null,
@@ -92,7 +96,7 @@ function NumbersOnly(evt) {
                 <InputError :message="form.errors.name" class="mt-2" />
             </div>
 
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-6 sm:col-span-5">
                 <InputLabel for="desc" value="Deskripsi" />
                 <TextAreaInput
                     id="desc"
@@ -102,6 +106,28 @@ function NumbersOnly(evt) {
                     required
                 />
                 <InputError :message="form.errors.desc" class="mt-2" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-5">
+                <InputLabel for="desc" value="Deskripsi Paragraf Kedua" />
+                <TextAreaInput
+                    id="desc"
+                    v-model="form.desc2"
+                    class="mt-1 block w-full"
+                    rows="5"
+                />
+                <InputError :message="form.errors.desc2" class="mt-2" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-5">
+                <InputLabel for="desc" value="Deskripsi Paragraf Ketiga" />
+                <TextAreaInput
+                    id="desc"
+                    v-model="form.desc3"
+                    class="mt-1 block w-full"
+                    rows="5"
+                />
+                <InputError :message="form.errors.desc3" class="mt-2" />
             </div>
 
             <div class="col-span-6 sm:col-span-4">
@@ -115,7 +141,7 @@ function NumbersOnly(evt) {
                 <InputError :message="form.errors.category_id" class="mt-2" />
             </div>
 
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-6 sm:col-span-3">
                 <InputLabel for="location" value="Destinasi" />
                 <TextInput
                     id="location"
@@ -128,7 +154,7 @@ function NumbersOnly(evt) {
                 <InputError :message="form.errors.location" class="mt-2" />
             </div>
 
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-6 sm:col-span-2">
                 <InputLabel for="city" value="Kota" />
                 <SelectInput
                     id="city"
@@ -139,7 +165,18 @@ function NumbersOnly(evt) {
                 <InputError :message="form.errors.city_id" class="mt-2" />
             </div>
 
-            <div class="col-span-6 sm:col-span-4">
+            <div class="col-span-3 sm:col-span-2">
+                <InputLabel for="duration" value="Durasi" />
+                <SelectInput
+                    id="duration"
+                    v-model:model-value.number="form.duration_id"
+                    :option="$page.props.selectDuration"
+                    required
+                />
+                <InputError :message="form.errors.duration_id" class="mt-2" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-3">
                 <InputLabel for="price" value="Harga" />
                 <TextInput
                     id="price"
@@ -151,6 +188,17 @@ function NumbersOnly(evt) {
                     v-on:keypress="NumbersOnly"
                 />
                 <InputError :message="form.errors.price" class="mt-2" />
+            </div>
+
+            <div class="col-span-3 sm:col-span-2">
+                <InputLabel for="person" value="Per Paket" />
+                <SelectInput
+                    id="person"
+                    v-model:model-value.number="form.person_id"
+                    :option="$page.props.selectPerson"
+                    required
+                />
+                <InputError :message="form.errors.person_id" class="mt-2" />
             </div>
 
         </template>

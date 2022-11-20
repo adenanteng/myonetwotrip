@@ -47,7 +47,9 @@ const selectNewPhoto = () => {
 };
 
 const updatePhotoPreview = () => {
-    storeTripPhoto();
+    if (photoInput.value !== null) {
+        storeTripPhoto();
+    }
     // const photo = photoInput.value.files[0];
     //
     // if (! photo) return;

@@ -25,10 +25,10 @@ function formatPriceX(value) {
 </script>
 
 <template>
-    <AppLayout title="Profile">
+    <AppLayout title="Destinasi">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Wisata
+                Destinasi
             </h2>
 
             <PrimaryButton as="a" :href="route('trip.create')">
@@ -42,25 +42,24 @@ function formatPriceX(value) {
                     <template v-for="trip in $page.props.trip" :key="trip.name">
                         <li
                             class="col-span-1 flex flex-col bg-white/25 rounded-2xl shadow-lg divide-y divide-gray-200 border border-gray-300">
-                            <Link :href="route('trip.show', trip.slug)">
-                                <div class="">
+                            <Link :href="route('trip.show', trip.slug)" class="h-full">
+                                <div class="relative">
                                     <img v-if="trip.media[0]"
                                          class="object-cover h-80 w-full rounded-t-2xl border-b border-gray-300"
                                          :src="trip.media[0].original_url" alt=""/>
                                     <div v-else class="h-80 rounded-t-2xl border-b border-gray-300"/>
+                                    <Link v-if="trip.user_id === $page.props.user.id" :href="route('trip.edit', trip.slug)" class="absolute top-1 right-1 bg-green-100 hover:bg-green-300 border border-green-300 rounded-2xl h-8 w-8 flex justify-center items-center">
+                                        <i class="fa-regular fa-pen text-green-800" />
+                                    </Link>
                                 </div>
                                 <div class="flex-1 flex flex-col px-8 py-4">
-                                    <h3 class="text-gray-900 text-sm font-medium">{{ trip.name }}</h3>
-                                    <div class="mt-1 flex-grow flex flex-col">
-                                        <div class="text-gray-500 text-xs">
-                                            Rp <span class="text-sm">{{ formatPriceX(trip.price) }}</span>
+                                    <h3 class="text-gray-900 text-sm font-medium">{{ trip.name }}<span class="px-2 py-1 ml-2 text-green-800 text-xs font-medium bg-green-100 rounded-full">{{ trip.category }}</span></h3>
+                                    <div class="mt-1 flex-grow flex flex-col space-y-1 text-gray-500 text-xs">
+                                        <div class="">
+                                            {{ trip.duration }}
                                         </div>
-                                        <div class="mt-2">
-                                        <span
-                                            class="px-2 py-1 text-green-800 text-xs font-medium bg-green-100 rounded-full">{{
-                                                trip.category
-                                            }}</span>
-                                            <Link :href="route('trip.edit', trip.slug)">Edit</Link>
+                                        <div class="">
+                                            Rp <span class="text-sm">{{ formatPriceX(trip.price) }}</span> / tiket
                                         </div>
                                     </div>
                                 </div>

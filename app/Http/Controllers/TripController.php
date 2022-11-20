@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Trip;
+use App\Models\TripAmenity;
 use App\Models\TripItinerary;
 use App\Models\TripItineraryDetail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -38,11 +39,15 @@ class TripController extends Controller
     {
         $selectCategory = Trip::CATEGORY;
         $selectCity = Trip::CITY;
+        $selectPerson = Trip::PERSON;
+        $selectDuration = Trip::DURATION;
 
         return Inertia::render('Trip/CreateEdit',
             [
                 'selectCity' => $selectCity,
-                'selectCategory' => $selectCategory
+                'selectCategory' => $selectCategory,
+                'selectPerson' => $selectPerson,
+                'selectDuration' => $selectDuration,
             ]);
     }
 
@@ -91,18 +96,24 @@ class TripController extends Controller
      */
     public function edit(Trip $trip)
     {
-//        dd($trip);
         $selectCategory = Trip::CATEGORY;
         $selectCity = Trip::CITY;
+        $selectPerson = Trip::PERSON;
+        $selectDuration = Trip::DURATION;
 
+        $selectAmenity = TripAmenity::GROUP;
         $selectItinerary = TripItinerary::whereTripId($trip->id)->get()->pluck('name', 'id');
-//        dd($selectItinerary);
+
+//        dd($trip);
 
         return Inertia::render('Trip/CreateEdit',
             [
                 'trip' => $trip,
                 'selectCity' => $selectCity,
                 'selectCategory' => $selectCategory,
+                'selectPerson' => $selectPerson,
+                'selectDuration' => $selectDuration,
+                'selectAmenity' => $selectAmenity,
                 'selectItinerary' => $selectItinerary,
             ]);
     }
@@ -185,5 +196,16 @@ class TripController extends Controller
     {
 //        dd($request->all());
         TripItineraryDetail::create($request->all());
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function addAmenity(Request $request)
+    {
+        TripAmenity::create($request->all());
     }
 }

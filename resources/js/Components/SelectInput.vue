@@ -45,7 +45,7 @@ defineEmits(['update:modelValue']);
                 leave-to-class="opacity-0"
             >
                 <ListboxOptions
-                    class="absolute mt-2 max-h-60 w-full overflow-auto rounded-2xl bg-white/25 backdrop-blur text-base shadow-lg focus:outline-none sm:text-sm border border-gray-300"
+                    class="z-40 absolute mt-2 max-h-60 w-full overflow-auto rounded-2xl bg-white/25 backdrop-blur text-base shadow-lg focus:outline-none sm:text-sm border border-gray-300"
                 >
                     <ListboxOption
                         v-slot="{ active, selected }"

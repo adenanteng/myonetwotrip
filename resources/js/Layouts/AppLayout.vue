@@ -56,7 +56,7 @@ const logout = () => {
                                     Dasbor
                                 </NavLink>
                                 <NavLink :href="route('trip.index')" :active="$page.component.startsWith('Trip')">
-                                    Wisata
+                                    Destinasi
                                 </NavLink>
                             </div>
                         </div>

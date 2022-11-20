@@ -33,4 +33,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     Route::post('trip/add-itinerary', [TripController::class, 'addItinerary'])->name('trip.addItinerary');
     Route::post('trip/add-itinerary-detail', [TripController::class, 'addItineraryDetail'])->name('trip.addItineraryDetail');
+
+    Route::post('trip/add-amenity', [TripController::class, 'addAmenity'])->name('trip.addAmenity');
 });

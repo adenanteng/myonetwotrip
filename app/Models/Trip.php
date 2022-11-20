@@ -20,24 +20,52 @@ class Trip extends Model implements HasMedia
         'slug',
         'name',
         'desc',
+        'desc2',
+        'desc3',
         'location',
         'price',
+        'person_id',
         'category_id',
         'city_id',
+        'duration_id',
         'status_id',
         'user_id',
     ];
 
-    const TRIP = 1;
+    const OPENTRIP = 1;
     const HONEYMOON = 2;
     const CATEGORY = [
-        self::TRIP => 'Paket Wisata',
-        self::HONEYMOON => 'Bulan Madu',
+        self::OPENTRIP => 'Opentrip',
+        self::HONEYMOON => 'Honeymoon',
     ];
 
-    const SELECT_CATEGORY = [
-        [ 'id' => self::TRIP, 'name' => 'Paket Wisata' ],
-        [ 'id' => self::HONEYMOON, 'name' => 'Bulan Madu' ],
+    const ONE = 1;
+    const TWO = 2;
+    const THREE = 3;
+    const FOUR = 4;
+    const FIVE = 5;
+    const SIX = 6;
+    const SEVEN = 7;
+    const EIGHT = 8;
+    const NINE = 9;
+    const TEN = 10;
+    const TWENTY = 20;
+
+    const DURATION = [
+        self::ONE => '1 Hari',
+        self::TWO => '2 Hari / 1 Malam',
+        self::FOUR => '3 Hari / 2 Malam',
+        self::SIX => '4 Hari / 3 Malam',
+    ];
+
+    const PERSON = [
+        self::ONE => 'orang',
+        self::TWO => '2 orang',
+        self::FOUR => '4 orang',
+        self::SIX => '6 orang',
+        self::EIGHT => '8 orang',
+        self::TEN => '10 0rang',
+        self::TWENTY => 'Sampai dengan 20 orang',
     ];
 
     const LAMPUNG = 1;
@@ -58,16 +86,6 @@ class Trip extends Model implements HasMedia
         self::SURABAYA => 'Surabaya',
         self::JAKARTA => 'Jakarta',
     ];
-    const SELECT_CITY = [
-        [ 'id' => self::LAMPUNG, 'name' => 'Lampung' ],
-        [ 'id' => self::YOGYAKARTA, 'name' => 'Yogyakarta' ],
-        [ 'id' => self::BALI, 'name' => 'Bali' ],
-        [ 'id' => self::NTB, 'name' => 'Nusa Tenggara Barat' ],
-        [ 'id' => self::NTT, 'name' => 'Nusa Tenggara Timur' ],
-        [ 'id' => self::MALANG, 'name' => 'Malang' ],
-        [ 'id' => self::SURABAYA, 'name' => 'Surabaya' ],
-        [ 'id' => self::JAKARTA, 'name' => 'Jakarta' ],
-    ];
 
     const ACTIVE = 1;
     const INACTIVE = 2;
@@ -81,8 +99,8 @@ class Trip extends Model implements HasMedia
         return 'slug';
     }
 
-    protected $with = ['media', 'user', 'itinerary'];
-    protected $appends = ['category', 'city', 'status'];
+    protected $with = ['media', 'user', 'amenity','itinerary'];
+    protected $appends = ['category', 'city', 'status', 'person', 'duration'];
 
     public function getStatusAttribute()
     {
@@ -99,8 +117,22 @@ class Trip extends Model implements HasMedia
         return self::CATEGORY[$this->category_id];
     }
 
+    public function getPersonAttribute()
+    {
+        return self::PERSON[$this->person_id];
+    }
+
+    public function getDurationAttribute()
+    {
+        return self::DURATION[$this->duration_id];
+    }
+
     public function user() {
         return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function amenity() {
+        return $this->hasMany(TripAmenity::class, 'trip_id', 'id');
     }
 
     public function itinerary() {

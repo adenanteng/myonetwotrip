@@ -19,10 +19,14 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('name')->unique();
             $table->longText('desc');
+            $table->longText('desc2')->nullable();
+            $table->longText('desc3')->nullable();
             $table->string('location');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('city_id');
+            $table->unsignedInteger('duration_id');
             $table->unsignedInteger('price');
+            $table->unsignedInteger('person_id');
             $table->unsignedInteger('status_id');
             $table->timestamps();
 

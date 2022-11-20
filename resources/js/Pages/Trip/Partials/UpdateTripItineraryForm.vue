@@ -60,7 +60,7 @@ const storeTripItineraryDetail = () => {
         </template>
 
         <template #form>
-            <div class="col-span-6" v-if="trip.itinerary != null">
+            <div class="col-span-6" v-if="trip.itinerary[0]">
                 <ul class="space-y-5">
                     <template v-for="itinerary in trip.itinerary">
                         <li class="">
@@ -122,7 +122,7 @@ const storeTripItineraryDetail = () => {
                         </div>
                         <div class="flex gap-3">
                             <div class="grow">
-                                <InputLabel for="itineraryCategory" value="Judul Itinerary"/>
+                                <InputLabel for="itineraryCategory" value="Kategori"/>
                                 <SelectInput
                                     id="itineraryCategory"
                                     v-model:model-value.number="formDetail.itinerary_id"
@@ -131,7 +131,7 @@ const storeTripItineraryDetail = () => {
                                 />
                             </div>
                             <div class="grow">
-                                <InputLabel for="itineraryDesc" value="Deskripsi Itinerary"/>
+                                <InputLabel for="itineraryDesc" value="Deskripsi"/>
                                 <TextAreaInput
                                     id="itineraryDesc"
                                     v-model="formDetail.desc"

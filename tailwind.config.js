@@ -17,7 +17,7 @@ module.exports = {
             },
             backgroundImage: {
                 'glass': "url('/img/glass.png')",
-                'hero': "url('/img/nusa-penida.jpg')",
+                'hero': "url('/img/hero.jpg')",
             }
         },
     },

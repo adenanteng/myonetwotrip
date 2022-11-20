@@ -10,7 +10,7 @@ import UpdateTripPhotoForm from "@/Pages/Trip/Partials/UpdateTripPhotoForm.vue";
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue'
 import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import {Carousel, Slide, Pagination, Navigation} from 'vue3-carousel'
 
 defineProps({
     trip: Object
@@ -116,48 +116,55 @@ function formatPriceX(value) {
 </script>
 
 <template>
-    <AppLayout title="Profile">
+    <AppLayout :title="trip.name">
         <div>
-            <div class="mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+            <div class="mx-auto sm:px-6 lg:px-8 py-12">
                 <!-- Product -->
                 <div class="lg:grid lg:grid-rows-1 lg:grid-cols-7 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16">
                     <!-- Product image -->
                     <div class="lg:row-end-1 lg:col-span-4">
-<!--                        <div class="aspect-w-4 aspect-h-3 rounded-2xl bg-gray-100 overflow-hidden">-->
-<!--                            <img :src="trip.media[0].original_url" alt="" class="object-center object-cover"/>-->
-                            <Carousel :items-to-show="1" :wrap-around="true" :autoplay="3000" :transition="1000" >
-                                <Slide v-for="slide in trip.media" :key="slide">
-                                    <div class="carousel__item w-full mx-1.5">
-                                        <img class="rounded-2xl object-cover object-center w-full h-96" :src="slide.original_url">
-                                    </div>
-                                </Slide>
+                        <!--                        <div class="aspect-w-4 aspect-h-3 rounded-2xl bg-gray-100 overflow-hidden">-->
+                        <!--                            <img :src="trip.media[0].original_url" alt="" class="object-center object-cover"/>-->
+                        <Carousel :items-to-show="1" :wrap-around="true" :autoplay="3000" :transition="1000">
+                            <Slide v-for="slide in trip.media" :key="slide">
+                                <div class="carousel__item w-full aspect-w-16 aspect-h-9 mx-1.5">
+                                    <img class="rounded-2xl object-cover object-center w-full "
+                                         :src="slide.original_url">
+                                </div>
+                            </Slide>
 
-                                <template #addons>
-                                    <Navigation />
-                                    <Pagination />
-                                </template>
-                            </Carousel>
-<!--                        </div>-->
+                            <template #addons>
+                                <Navigation/>
+                                <Pagination/>
+                            </template>
+                        </Carousel>
+                        <!--                        </div>-->
                     </div>
 
                     <!-- Product details -->
                     <div
                         class="max-w-2xl mx-auto mt-14 sm:mt-16 lg:max-w-none lg:mt-0 lg:row-end-2 lg:row-span-2 lg:col-span-3">
                         <div class="flex flex-col-reverse">
-                            <div class="mt-4">
-                                <h1 class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
-                                    {{ trip.name }}</h1>
+                            <div class="mt-4 text-sm text-gray-500 capitalize">
+                                <h1 class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl flex items-end">
+                                    {{ trip.name }}
+                                </h1>
 
-                                <p class="text-sm text-gray-500 mt-2 capitalize">
+                                <p class="mt-2">
+                                    <i class="fa-regular fa-clock mr-1"/> {{ trip.duration }}
+                                </p>
+                                <p class="mt-2">
                                     <i class="fa-regular fa-location-dot mr-1"/> {{ trip.location }}, {{ trip.city }}
                                 </p>
                             </div>
                         </div>
 
                         <p class="text-gray-500 mt-6">{{ trip.desc }}</p>
+                        <p class="text-gray-500 mt-6" v-if="trip.desc2">{{ trip.desc2 }}</p>
+                        <p class="text-gray-500 mt-6" v-if="trip.desc3">{{ trip.desc3 }}</p>
 
                         <p class="mt-5">Mulai dari <span class="font-medium text-xl">Rp </span> <span
-                            class="font-bold text-2xl">{{ formatPrice(trip.price) }}</span></p>
+                            class="font-bold text-2xl">{{ formatPrice(trip.price) }}</span> /{{ trip.person }}</p>
 
                         <div class="mt-5 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
                             <button type="button"
@@ -170,14 +177,34 @@ function formatPriceX(value) {
                             </button>
                         </div>
 
-                        <!--                        <div class="border-t border-gray-200 mt-10 pt-10">-->
-                        <!--                            <h3 class="text-sm font-medium text-gray-900">Highlights</h3>-->
-                        <!--                            <div class="mt-4 prose prose-sm text-gray-500">-->
-                        <!--                                <ul role="list">-->
-                        <!--                                    <li v-for="highlight in product.highlights" :key="highlight">{{ highlight }}</li>-->
-                        <!--                                </ul>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
+                        <div class="border-t border-gray-200 mt-10 pt-10 space-y-5">
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-900"><i
+                                    class="fa-regular fa-check text-green-600 mr-2"/>Include</h3>
+                                <div class="mt-2 prose prose-sm text-gray-500">
+                                    <ul role="list">
+                                        <template v-for="include in trip.amenity" :key="include">
+                                            <li v-if="include.group_id === 1">
+                                                {{ include.name }}
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-900"><i
+                                    class="fa-regular fa-x text-red-600 mr-2"/>Exclude</h3>
+                                <div class="mt-2 prose prose-sm text-gray-500">
+                                    <ul role="list">
+                                        <template v-for="exclude in trip.amenity" :key="exclude">
+                                            <li v-if="exclude.group_id === 2">
+                                                {{ exclude.name }}
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="border-t border-gray-200 mt-10 pt-10">
                             <h3 class="text-sm font-medium text-gray-900">Author</h3>
@@ -187,11 +214,16 @@ function formatPriceX(value) {
                                       class="block h-10 w-10 rounded-full flex items-center justify-center bg-indigo-100 mr-2">
                                     <i class="fa-duotone fa-user text-2xl text-indigo-400"/>
                                 </span>
-                                <div class="">
+                                <div class="grid">
                                     <p class="capitalize text-gray-700 font-medium">
                                         {{ trip.user.name }}
                                     </p>
                                     {{ trip.user.email }}
+                                    <Link v-if="trip.user_id === $page.props.user.id"
+                                          :href="route('trip.edit', trip.slug)"
+                                          class="underline text-sm hover:text-gray-900">
+                                        Edit postingan
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -226,9 +258,11 @@ function formatPriceX(value) {
                                 <TabPanel class="space-y-5 mt-5">
                                     <template v-for="itinerary in trip.itinerary" :key="itinerary.id">
                                         <Disclosure v-slot="{ open }">
-                                            <DisclosureButton class="flex w-full justify-between items-center rounded-2xl px-4 py-2 text-left text-sm font-medium text-indigo-600 bg-indigo-100/25 hover:bg-indigo-200/25 border border-indigo-300">
+                                            <DisclosureButton
+                                                class="flex w-full justify-between items-center rounded-2xl px-4 py-2 text-left text-sm font-medium text-indigo-600 bg-indigo-100/25 hover:bg-indigo-200/25 border border-indigo-300">
                                                 <span>{{ itinerary.name }}</span>
-                                                <i :class="open ? 'rotate-180 transform' : ''" class="fa-regular fa-angle-down"/>
+                                                <i :class="open ? 'rotate-180 transform' : ''"
+                                                   class="fa-regular fa-angle-down"/>
                                             </DisclosureButton>
                                             <DisclosurePanel class="px-4 ml-5 text-sm text-gray-500">
                                                 <ul class="list-disc space-y-1">
