@@ -995,10 +995,6 @@
       "_use-controllable.80a255e7.js"
     ]
   },
-  "EditorInput.css": {
-    "file": "assets/EditorInput.a1ae07b3.css",
-    "src": "EditorInput.css"
-  },
   "carousel.css": {
     "file": "assets/carousel.d3524ff3.css",
     "src": "carousel.css"
@@ -1006,6 +1002,10 @@
   "Table.css": {
     "file": "assets/Table.bd8409fe.css",
     "src": "Table.css"
+  },
+  "EditorInput.css": {
+    "file": "assets/EditorInput.a1ae07b3.css",
+    "src": "EditorInput.css"
   },
   "resources/js/app.css": {
     "file": "assets/app.2a3bf27b.css",
