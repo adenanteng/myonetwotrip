@@ -116,7 +116,7 @@ onMounted(() => {
                                 <NavLink :href="route('landing.lampung')" :active="route().current('landing.lampung')" >
                                     Lampung
                                 </NavLink>
-
+                                
 <!--                                <NavLink :href="route('landing.blog')" :active="route().current('landing.blog')" >-->
 <!--                                    Artikel-->
 <!--                                </NavLink>-->
