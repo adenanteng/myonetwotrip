@@ -180,7 +180,7 @@ const logout = () => {
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
                                             href="/user"
-                                            :active="$page.url.startsWith('/pengguna')">
+                                            :active="$page.url.startsWith('/user')">
                                             Pengguna
                                         </NavLinkAlt>
 
