@@ -22,7 +22,7 @@ const props = defineProps({
         </p>
     </div>
 
-    <div class="my-12 grid gap-5 lg:grid-cols-4 mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-0">
+    <div class="my-12 grid gap-5 lg:grid-cols-4 mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
         <slot name="detail" />
     </div>
 
