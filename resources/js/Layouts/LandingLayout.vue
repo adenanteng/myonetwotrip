@@ -101,7 +101,7 @@ onMounted(() => {
 <!--                                        {{ menu.name }}-->
 <!--                                    </NavLink>-->
 <!--                                </template>-->
-                                <NavLink :href="route('landing.welcome')" :active="route().current('landing.welcome')" >
+                                <NavLink href="/" :active="route().current('landing.welcome')" >
                                     Beranda
                                 </NavLink>
 
