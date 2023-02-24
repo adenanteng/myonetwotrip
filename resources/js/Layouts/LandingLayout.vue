@@ -105,15 +105,15 @@ onMounted(() => {
                                     Beranda
                                 </NavLink>
 
-                                <NavLink :href="route('landing.yogyakarta')" :active="route().current('landing.yogyakarta')" >
+                                <NavLink href="/yogyakarta" :active="route().current('landing.yogyakarta')" >
                                     Yogyakarta
                                 </NavLink>
 
-                                <NavLink :href="route('landing.ntb')" :active="route().current('landing.ntb')" >
+                                <NavLink href="/nusa-tenggara-barat" :active="route().current('landing.ntb')" >
                                     Nusa Tenggara Barat
                                 </NavLink>
 
-                                <NavLink :href="route('landing.lampung')" :active="route().current('landing.lampung')" >
+                                <NavLink href="/lampung" :active="route().current('landing.lampung')" >
                                     Lampung
                                 </NavLink>
 
