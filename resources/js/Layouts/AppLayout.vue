@@ -159,35 +159,35 @@ const logout = () => {
                                     <nav class="flex space-x-4">
                                         <NavLinkAlt
                                             href="/dashboard"
-                                            :active="route().current('dashboard')">
+                                            :active="$page.url == '/'">
                                             Dasbor
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
                                             href="/trip"
-                                            :active="$page.component.startsWith('Trip')">
+                                            :active="$page.url.startsWith('/trip')">
                                             Destinasi
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
                                             href="/blog"
-                                            :active="$page.component.startsWith('Blog')">
+                                            :active="$page.url.startsWith('/blog')">
                                             Blog
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
                                             href="/user"
-                                            :active="$page.component.startsWith('User')">
+                                            :active="$page.url.startsWith('/pengguna')">
                                             Pengguna
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
                                             href="/setting"
-                                            :active="$page.component.startsWith('AppSetting')">
+                                            :active="$page.url.startsWith('/setting')">
                                             Pengaturan
                                         </NavLinkAlt>
 

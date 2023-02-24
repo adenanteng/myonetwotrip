@@ -101,19 +101,19 @@ onMounted(() => {
 <!--                                        {{ menu.name }}-->
 <!--                                    </NavLink>-->
 <!--                                </template>-->
-                                <NavLink href="/" :active="route().current('landing.welcome')" >
+                                <NavLink href="/" :active="$page.url == '/'" >
                                     Beranda
                                 </NavLink>
 
-                                <NavLink href="/yogyakarta" :active="route().current('landing.yogyakarta')" >
+                                <NavLink href="/yogyakarta" :active="$page.url.startsWith('/yogyakarta')" >
                                     Yogyakarta
                                 </NavLink>
 
-                                <NavLink href="/nusa-tenggara-barat" :active="route().current('landing.ntb')" >
+                                <NavLink href="/nusa-tenggara-barat" :active="$page.url.startsWith('/nusa-tenggara-barat')" >
                                     Nusa Tenggara Barat
                                 </NavLink>
 
-                                <NavLink href="/lampung" :active="route().current('landing.lampung')" >
+                                <NavLink href="/lampung" :active="$page.url.startsWith('/lampung')" >
                                     Lampung
                                 </NavLink>
 
