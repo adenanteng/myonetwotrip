@@ -88,9 +88,9 @@ onMounted(() => {
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <!--                                <Link :href="route('welcome')">-->
-                                <ApplicationMark class="block h-10 w-auto"/>
-                                <!--                                </Link>-->
+                                <Link :href="route('welcome')">
+                                    <ApplicationMark class="block h-10 w-auto"/>
+                                </Link>
                             </div>
 
                             <!-- Navigation Links -->
@@ -130,9 +130,9 @@ onMounted(() => {
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <div class="ml-3 relative" v-if="$page.props.user == null">
-                                <NavLink :href="route('login')">
-                                    Login
-                                </NavLink>
+<!--                                <NavLink :href="/login">-->
+<!--                                    Login-->
+<!--                                </NavLink>-->
                             </div>
 
                             <div class="ml-3 relative">
@@ -167,11 +167,11 @@ onMounted(() => {
 
                                     <template #content>
                                         <!-- Account Management -->
-                                        <DropdownLink :href="route('dashboard')">
+                                        <DropdownLink href="/dashboard">
                                             Dasbor
                                         </DropdownLink>
 
-                                        <DropdownLink :href="route('profile.show')">
+                                        <DropdownLink href="user/profile">
                                             Profil
                                         </DropdownLink>
 
@@ -224,7 +224,7 @@ onMounted(() => {
                 <!-- Responsive Navigation Menu -->
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden mt-2 bg-white bg-opacity-50 backdrop-blur rounded-2xl border border-gray-300">
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink :href="route('landing.welcome')" :active="route().current('landing.welcome')">
+                        <ResponsiveNavLink href="/dashboard" :active="route().current('landing.welcome')">
                             Beranda
                         </ResponsiveNavLink>
 
@@ -259,7 +259,7 @@ onMounted(() => {
                         <div class="space-y-1">
                             <!-- Team Management -->
                             <template v-if="$page.props.user">
-                                <ResponsiveNavLink :href="route('profile.show')"
+                                <ResponsiveNavLink href="/user/profile"
                                                    :active="route().current('profile.show')">
                                     Profile
                                 </ResponsiveNavLink>
@@ -275,11 +275,11 @@ onMounted(() => {
 
 
                             <template v-else>
-                                <ResponsiveNavLink :href="route('login')">
+                                <ResponsiveNavLink href="/login">
                                     Masuk
                                 </ResponsiveNavLink>
 
-                                <ResponsiveNavLink :href="route('register')">
+                                <ResponsiveNavLink href="register">
                                     Daftar
                                 </ResponsiveNavLink>
                             </template>
