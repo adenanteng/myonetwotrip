@@ -39,7 +39,7 @@ const submit = () => {
         </template>
 
         <template #title>
-            Belum punya akun? <Link class="underline text-sm text-gray-600 hover:text-gray-900" :href="route('register')">Daftar</Link>
+            Belum punya akun? <Link class="underline text-sm text-gray-600 hover:text-gray-900" href="/register">Daftar</Link>
         </template>
 
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
@@ -81,9 +81,9 @@ const submit = () => {
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    Lupa password?
-                </Link>
+<!--                <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">-->
+<!--                    Lupa password?-->
+<!--                </Link>-->
 
                 <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Masuk
