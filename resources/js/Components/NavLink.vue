@@ -22,7 +22,7 @@ const classes = computed(() => {
 </script>
 
 <template>
-    <a :href="href" :class="classes">
+    <Link :href="href" :class="classes">
         <slot />
-    </a>
+    </Link>
 </template>

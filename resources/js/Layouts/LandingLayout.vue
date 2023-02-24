@@ -101,22 +101,22 @@ onMounted(() => {
 <!--                                        {{ menu.name }}-->
 <!--                                    </NavLink>-->
 <!--                                </template>-->
-                                <NavLink :href="route('landing.welcome')" :active="route().current('landing.welcome')" >
+                                <NavLink href="/" :active="route().current('landing.welcome')" >
                                     Beranda
                                 </NavLink>
 
-                                <NavLink :href="route('landing.yogyakarta')" :active="route().current('landing.yogyakarta')" >
+                                <NavLink href="/yogyakarta" :active="route().current('landing.yogyakarta')" >
                                     Yogyakarta
                                 </NavLink>
 
-                                <NavLink :href="route('landing.ntb')" :active="route().current('landing.ntb')" >
+                                <NavLink href="/nusa-tenggara-barat" :active="route().current('landing.ntb')" >
                                     Nusa Tenggara Barat
                                 </NavLink>
 
-                                <NavLink :href="route('landing.lampung')" :active="route().current('landing.lampung')" >
+                                <NavLink href="/lampung" :active="route().current('landing.lampung')" >
                                     Lampung
                                 </NavLink>
-                                
+
 <!--                                <NavLink :href="route('landing.blog')" :active="route().current('landing.blog')" >-->
 <!--                                    Artikel-->
 <!--                                </NavLink>-->
