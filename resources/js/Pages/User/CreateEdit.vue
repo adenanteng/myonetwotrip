@@ -13,7 +13,7 @@ import PasswordResetForm from "./Partials/PasswordResetForm.vue";
                name="Pengguna"
                desc="lorem ipsum"
                action="Kembali"
-               :href="route('user.index')"
+               href="/user"
     >
 
         <div>

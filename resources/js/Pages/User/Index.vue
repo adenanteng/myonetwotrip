@@ -38,7 +38,7 @@ const gridColumns = [
                name="Pengguna"
                desc="lorem ipsum"
                action="Tambah Pengguna"
-               :href="route('user.create')"
+               href="user/create"
     >
 
         <form id="search">
