@@ -88,9 +88,9 @@ onMounted(() => {
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('welcome')">
-                                    <ApplicationMark class="block h-10 w-auto"/>
-                                </Link>
+                                <!--                                <Link :href="route('welcome')">-->
+                                <ApplicationMark class="block h-10 w-auto"/>
+                                <!--                                </Link>-->
                             </div>
 
                             <!-- Navigation Links -->
@@ -101,19 +101,19 @@ onMounted(() => {
 <!--                                        {{ menu.name }}-->
 <!--                                    </NavLink>-->
 <!--                                </template>-->
-                                <NavLink href="/" :active="route().current('landing.welcome')" >
+                                <NavLink :href="route('landing.welcome')" :active="route().current('landing.welcome')" >
                                     Beranda
                                 </NavLink>
 
-                                <NavLink href="/yogyakarta" :active="route().current('landing.yogyakarta')" >
+                                <NavLink :href="route('landing.yogyakarta')" :active="route().current('landing.yogyakarta')" >
                                     Yogyakarta
                                 </NavLink>
 
-                                <NavLink href="/nusa-tenggara-barat" :active="route().current('landing.ntb')" >
+                                <NavLink :href="route('landing.ntb')" :active="route().current('landing.ntb')" >
                                     Nusa Tenggara Barat
                                 </NavLink>
 
-                                <NavLink href="/lampung" :active="route().current('landing.lampung')" >
+                                <NavLink :href="route('landing.lampung')" :active="route().current('landing.lampung')" >
                                     Lampung
                                 </NavLink>
 
@@ -130,9 +130,9 @@ onMounted(() => {
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <div class="ml-3 relative" v-if="$page.props.user == null">
-<!--                                <NavLink :href="/login">-->
-<!--                                    Login-->
-<!--                                </NavLink>-->
+                                <NavLink :href="route('login')">
+                                    Login
+                                </NavLink>
                             </div>
 
                             <div class="ml-3 relative">
@@ -167,11 +167,11 @@ onMounted(() => {
 
                                     <template #content>
                                         <!-- Account Management -->
-                                        <DropdownLink href="/dashboard">
+                                        <DropdownLink :href="route('dashboard')">
                                             Dasbor
                                         </DropdownLink>
 
-                                        <DropdownLink href="user/profile">
+                                        <DropdownLink :href="route('profile.show')">
                                             Profil
                                         </DropdownLink>
 
@@ -224,7 +224,7 @@ onMounted(() => {
                 <!-- Responsive Navigation Menu -->
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden mt-2 bg-white bg-opacity-50 backdrop-blur rounded-2xl border border-gray-300">
                     <div class="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink href="/dashboard" :active="route().current('landing.welcome')">
+                        <ResponsiveNavLink :href="route('landing.welcome')" :active="route().current('landing.welcome')">
                             Beranda
                         </ResponsiveNavLink>
 
@@ -259,7 +259,7 @@ onMounted(() => {
                         <div class="space-y-1">
                             <!-- Team Management -->
                             <template v-if="$page.props.user">
-                                <ResponsiveNavLink href="/user/profile"
+                                <ResponsiveNavLink :href="route('profile.show')"
                                                    :active="route().current('profile.show')">
                                     Profile
                                 </ResponsiveNavLink>
@@ -275,11 +275,11 @@ onMounted(() => {
 
 
                             <template v-else>
-                                <ResponsiveNavLink href="/login">
+                                <ResponsiveNavLink :href="route('login')">
                                     Masuk
                                 </ResponsiveNavLink>
 
-                                <ResponsiveNavLink href="register">
+                                <ResponsiveNavLink :href="route('register')">
                                     Daftar
                                 </ResponsiveNavLink>
                             </template>

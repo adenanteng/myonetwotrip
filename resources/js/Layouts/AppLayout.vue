@@ -158,35 +158,35 @@ const logout = () => {
                                 <div class="hidden lg:block lg:col-span-2">
                                     <nav class="flex space-x-4">
                                         <NavLinkAlt
-                                            href="/dashboard"
+                                            :href="route('dashboard')"
                                             :active="route().current('dashboard')">
                                             Dasbor
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
-                                            href="/trip"
+                                            :href="route('trip.index')"
                                             :active="$page.component.startsWith('Trip')">
                                             Destinasi
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
-                                            href="/blog"
+                                            :href="route('blog.index')"
                                             :active="$page.component.startsWith('Blog')">
                                             Blog
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
-                                            href="/user"
+                                            :href="route('user.index')"
                                             :active="$page.component.startsWith('User')">
                                             Pengguna
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
-                                            href="/setting"
+                                            :href="route('setting.index')"
                                             :active="$page.component.startsWith('AppSetting')">
                                             Pengaturan
                                         </NavLinkAlt>
@@ -262,7 +262,7 @@ const logout = () => {
                                     <div class="pt-3 pb-2">
                                         <div class="flex items-center justify-between px-4">
                                             <div>
-                                                <Link href="/dashboard">
+                                                <Link :href="route('dashboard')">
                                                     <ApplicationMark class="block h-9 w-auto"/>
                                                 </Link>
                                             </div>
@@ -298,7 +298,7 @@ const logout = () => {
                                             </div>
                                         </div>
                                         <div class="mt-3 px-2 space-y-1">
-                                            <ResponsiveNavLink href="/dashboard"
+                                            <ResponsiveNavLink :href="route('dashboard')"
                                                                :active="route().current('dashboard')">
                                                 Dashboard
                                             </ResponsiveNavLink>
@@ -321,7 +321,7 @@ const logout = () => {
                                             </div>
                                         </div>
                                         <div class="mt-3 px-2 space-y-1">
-                                            <ResponsiveNavLink href="/user/profile"
+                                            <ResponsiveNavLink :href="route('profile.show')"
                                                                :active="route().current('profile.show')">
                                                 Profil
                                             </ResponsiveNavLink>
