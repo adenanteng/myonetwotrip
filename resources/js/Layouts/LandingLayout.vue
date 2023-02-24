@@ -130,7 +130,7 @@ onMounted(() => {
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <div class="ml-3 relative" v-if="$page.props.user == null">
-                                <NavLink :href="route('login')">
+                                <NavLink href="/login">
                                     Login
                                 </NavLink>
                             </div>
@@ -167,11 +167,11 @@ onMounted(() => {
 
                                     <template #content>
                                         <!-- Account Management -->
-                                        <DropdownLink :href="route('dashboard')">
+                                        <DropdownLink href="/dashboard">
                                             Dasbor
                                         </DropdownLink>
 
-                                        <DropdownLink :href="route('profile.show')">
+                                        <DropdownLink href="/user/profile">
                                             Profil
                                         </DropdownLink>
 

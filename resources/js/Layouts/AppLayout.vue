@@ -80,9 +80,9 @@ const logout = () => {
                     <div class="relative flex flex-wrap items-center justify-center lg:justify-between">
                         <!-- Logo -->
                         <div class="absolute left-0 py-5 flex-shrink-0 lg:static flex items-center">
-                            <Link :href="route('dashboard')">
+<!--                            <Link :href="route('dashboard')">-->
                                 <ApplicationMark class="block h-9 w-auto"/>
-                            </Link>
+<!--                            </Link>-->
                             <div class="ml-2 nightwind-prevent-block" v-if="$page.props.appSetting">
                                 <h1 class="text-white capitalize font-semibold">{{ $page.props.appSetting.name }}</h1>
                                 <p class="text-gray-200 font-light text-sm">{{ $page.props.appSetting.desc }}</p>
@@ -126,18 +126,18 @@ const logout = () => {
                                     </template>
 
                                     <template #content>
-                                        <DropdownLink :href="route('landing.welcome')">
+                                        <DropdownLink href="/">
                                             Beranda
                                         </DropdownLink>
 
-                                        <DropdownLink :href="route('profile.show')">
+                                        <DropdownLink href="user/profile">
                                             Profil
                                         </DropdownLink>
 
-                                        <DropdownLink v-if="$page.props.jetstream.hasApiFeatures"
-                                                      :href="route('api-tokens.index')">
-                                            API Tokens
-                                        </DropdownLink>
+<!--                                        <DropdownLink v-if="$page.props.jetstream.hasApiFeatures"-->
+<!--                                                      :href="route('api-tokens.index')">-->
+<!--                                            API Tokens-->
+<!--                                        </DropdownLink>-->
 
                                         <div class="border-t border-gray-100"/>
 
@@ -158,35 +158,35 @@ const logout = () => {
                                 <div class="hidden lg:block lg:col-span-2">
                                     <nav class="flex space-x-4">
                                         <NavLinkAlt
-                                            :href="route('dashboard')"
+                                            href="/dashboard"
                                             :active="route().current('dashboard')">
                                             Dasbor
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
-                                            :href="route('trip.index')"
+                                            href="/trip"
                                             :active="$page.component.startsWith('Trip')">
                                             Destinasi
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
-                                            :href="route('blog.index')"
+                                            href="/blog"
                                             :active="$page.component.startsWith('Blog')">
                                             Blog
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
-                                            :href="route('user.index')"
+                                            href="/user"
                                             :active="$page.component.startsWith('User')">
                                             Pengguna
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
-                                            :href="route('setting.index')"
+                                            href="/setting"
                                             :active="$page.component.startsWith('AppSetting')">
                                             Pengaturan
                                         </NavLinkAlt>
