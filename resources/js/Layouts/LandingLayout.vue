@@ -101,19 +101,19 @@ onMounted(() => {
 <!--                                        {{ menu.name }}-->
 <!--                                    </NavLink>-->
 <!--                                </template>-->
-                                <NavLink href="https://myonetwotrip.com/" :active="route().current('landing.welcome')" >
+                                <NavLink :href="route('landing.welcome')" :active="route().current('landing.welcome')" >
                                     Beranda
                                 </NavLink>
 
-                                <NavLink href="https://myonetwotrip.com/yogyakarta" :active="route().current('landing.yogyakarta')" >
+                                <NavLink :href="route('landing.yogyakarta')" :active="route().current('landing.yogyakarta')" >
                                     Yogyakarta
                                 </NavLink>
 
-                                <NavLink href="https://myonetwotrip.com/nusa-tenggara-barat" :active="route().current('landing.ntb')" >
+                                <NavLink :href="route('landing.ntb')" :active="route().current('landing.ntb')" >
                                     Nusa Tenggara Barat
                                 </NavLink>
 
-                                <NavLink href="https://myonetwotrip.com/lampung" :active="route().current('landing.lampung')" >
+                                <NavLink :href="route('landing.lampung')" :active="route().current('landing.lampung')" >
                                     Lampung
                                 </NavLink>
 
