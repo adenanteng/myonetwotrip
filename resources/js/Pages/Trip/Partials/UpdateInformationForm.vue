@@ -106,6 +106,7 @@ const showPage = () => {
                     id="city"
                     v-model:model-value.number="form.city_id"
                     :option="$page.props.selectCity"
+                    class="mt-1 block w-full"
                     required
                 />
                 <InputError :message="form.errors.city_id" class="mt-2" />
@@ -117,6 +118,7 @@ const showPage = () => {
                     id="category"
                     v-model:model-value.number="form.category_id"
                     :option="$page.props.selectCategory"
+                    class="mt-1 block w-full"
                     required
                 />
                 <InputError :message="form.errors.category_id" class="mt-2" />
