@@ -17,7 +17,7 @@ defineProps({
                name="Blog"
                desc="lorem ipsum"
                action="Kembali"
-               href="/blog/index"
+               href="/blog"
     >
 
         <div>

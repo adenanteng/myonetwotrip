@@ -105,6 +105,10 @@ onMounted(() => {
                                     Beranda
                                 </NavLink>
 
+                                <NavLink href="/bali" :active="$page.url.startsWith('/bali')" >
+                                    Bali
+                                </NavLink>
+
                                 <NavLink href="/yogyakarta" :active="$page.url.startsWith('/yogyakarta')" >
                                     Yogyakarta
                                 </NavLink>
