@@ -28,6 +28,7 @@ Route::get('/destinasi/{trip}', [TripController::class, 'show'])->name('trip.sho
 Route::get('/bali', [LandingController::class, 'tripBali'])->name('landing.bali');
 Route::get('/yogyakarta', [LandingController::class, 'tripYogyakarta'])->name('landing.yogyakarta');
 Route::get('/nusa-tenggara-barat', [LandingController::class, 'tripNtb'])->name('landing.ntb');
+Route::get('/malang', [LandingController::class, 'tripMalang'])->name('landing.malang');
 Route::get('/lampung', [LandingController::class, 'tripLampung'])->name('landing.lampung');
 
 Route::get('/artikel', [LandingController::class, 'blog'])->name('landing.blog');

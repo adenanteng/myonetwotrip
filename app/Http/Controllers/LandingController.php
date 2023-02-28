@@ -112,6 +112,22 @@ class LandingController extends Controller
      *
      * @return Response
      */
+    public function tripMalang(): Response
+    {
+//        dd(Trip::where('city_id', Trip::NTB)->get());
+        return Inertia::render('Landing/Trip', [
+            'title' => 'Malang',
+            'desc' => 'Lorem ipsum',
+            'img' => '/img/malang.jpg',
+            'trip' => Trip::where('city_id', Trip::MALANG)->get()
+        ]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
     public function tripLampung(): Response
     {
 //        dd(Trip::all());

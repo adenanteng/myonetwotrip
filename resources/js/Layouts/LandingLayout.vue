@@ -117,6 +117,10 @@ onMounted(() => {
                                     Nusa Tenggara Barat
                                 </NavLink>
 
+                                <NavLink href="/malang" :active="$page.url.startsWith('/malang')" >
+                                    Malang
+                                </NavLink>
+
                                 <NavLink href="/lampung" :active="$page.url.startsWith('/lampung')" >
                                     Lampung
                                 </NavLink>

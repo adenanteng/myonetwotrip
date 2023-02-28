@@ -48,12 +48,14 @@ class Trip extends Model implements HasMedia
     const NTB = 3;
     const LAMPUNG = 4;
     const SURABAYA = 5;
+    const MALANG =6;
     const CITY = [
         self::BALI => 'Bali',
         self::YOGYAKARTA => 'Yogyakarta',
         self::NTB => 'Nusa tenggara Barat',
         self::LAMPUNG => 'Lampung',
-        self::SURABAYA => 'Surabaya'
+        self::SURABAYA => 'Surabaya',
+        self::MALANG => 'Malang',
     ];
 
     protected $with = ['media', 'user'];
