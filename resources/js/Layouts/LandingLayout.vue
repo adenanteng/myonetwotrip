@@ -94,7 +94,7 @@ onMounted(() => {
                             </div>
 
                             <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 lg:flex">
 <!--                                <template v-for="menu in $page.props.navbarMenu">-->
 <!--                                    <NavLink :href="route('page.show', menu.slug)"-->
 <!--                                             :active="$page.url == '/page/' + menu.slug">-->
@@ -136,7 +136,7 @@ onMounted(() => {
                             </div>
                         </div>
 
-                        <div class="hidden sm:flex sm:items-center sm:ml-6">
+                        <div class="hidden lg:flex sm:items-center sm:ml-6">
                             <div class="ml-3 relative" v-if="$page.props.user == null">
                                 <NavLink href="/login">
                                     Login
@@ -198,10 +198,10 @@ onMounted(() => {
                         </div>
 
                         <!-- Hamburger -->
-                        <div class="-mr-2 flex items-center sm:hidden">
+                        <div class="-mr-2 flex items-center lg:hidden">
                             <DarkmodeToggle :darkMode="darkMode" @click="darkMode = ! darkMode"/>
                             <button
-                                class="inline-flex items-center justify-center ml-2 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition"
+                                class="inline-flex items-center justify-center ml-2 p-2 rounded-2xl text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition"
                                 @click="showingNavigationDropdown = ! showingNavigationDropdown">
                                 <svg
                                     class="h-6 w-6"
@@ -230,7 +230,7 @@ onMounted(() => {
                 </div>
 
                 <!-- Responsive Navigation Menu -->
-                <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden mt-2 bg-white bg-opacity-50 backdrop-blur rounded-2xl border border-gray-300">
+                <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="lg:hidden mt-2 bg-white bg-opacity-50 backdrop-blur rounded-2xl border border-gray-300">
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('landing.welcome')" :active="route().current('landing.welcome')">
                             Beranda
@@ -345,7 +345,7 @@ onMounted(() => {
 
                     <div class="absolute w-full bottom-0 top-0 flex justify-center items-center bg-gradient-to-tr from-gray-900 dark:from-gray-900">
                         <div class="text-left justify-start max-w-screen-xl w-full px-10 2xl:px-0">
-                            <h1 class="max-w-2xl text-white text-6xl font-bold capitalize nightwind-prevent">
+                            <h1 class="max-w-2xl text-white text-4xl lg:text-6xl font-bold capitalize nightwind-prevent">
                                 {{ props.header }}
                             </h1>
                             <p class="max-w-xl text-gray-100 text-base mt-1 nightwind-prevent">

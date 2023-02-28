@@ -126,7 +126,7 @@ function formatPrice(value) {
 <!--        </div>-->
 
 
-        <div class="relative pb-10 pt-32 px-10">
+        <div class="relative pb-10 pt-32 sm:px-10">
             <div class="lg:mx-auto lg:max-w-7xl lg:grid lg:grid-cols-5 gap-8 lg:items-start">
                 <div class="relative sm:py-16 lg:py-0 lg:col-span-3">
 <!--                    <div aria-hidden="true" class="hidden sm:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-screen">-->
@@ -156,7 +156,7 @@ function formatPrice(value) {
                             </template>
                         </Carousel>
 
-                        <div class="">
+                        <div class="hidden sm:block">
                             <div class="border-b border-gray-200">
                                 <nav class="-mb-px flex space-x-8" aria-label="Tabs">
                                     <button @click="tab=1"

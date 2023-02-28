@@ -39,14 +39,14 @@ function formatPrice(value) {
                         </span>
 
                         <div class="absolute px-10 w-full bottom-0 top-0 flex justify-center items-center bg-gradient-to-tr from-gray-900 dark:from-gray-900 transition duration-1000">
-                            <div class="text-left justify-start max-w-screen-xl w-full px-10 2xl:px-0">
-                                <h1 class="max-w-2xl text-white text-6xl font-bold capitalize nightwind-prevent">
+                            <div class="text-left justify-start max-w-screen-xl w-full">
+                                <h1 class="max-w-2xl text-white text-4xl sm:text-6xl font-bold capitalize nightwind-prevent">
                                     {{ item.name }}
                                 </h1>
                                 <p class="max-w-xl text-gray-100 text-base mt-1 nightwind-prevent">{{ item.desc }}</p>
 
                                 <p class="text-gray-100 mt-3">Mulai dari</p>
-                                <h3 class="max-w-2xl text-white text-3xl font-bold capitalize nightwind-prevent">
+                                <h3 class="max-w-2xl text-white text-xl sm:text-3xl font-bold capitalize nightwind-prevent">
                                     Rp. {{ formatPrice(item.price) }} <span class="text-base font-normal">/ tiket</span>
                                 </h3>
 
@@ -56,7 +56,7 @@ function formatPrice(value) {
                                     Lihat Destinasi
                                 </PrimaryButton>
 
-                                <div class="mt-3 flex space-x-2 nightwind-prevent-block">
+                                <div class="mt-3 flex space-x-2 nightwind-prevent-block hidden sm:block">
                                     <button class="text-gray-400 hover:text-white hover:underline group" @click="myCarousel.prev()">
                                         Sebelumnya
                                         <i class="text-white fa-regular fa-arrow-left ml-2 rounded-full p-1 border border-transparent group-hover:border-white"/>

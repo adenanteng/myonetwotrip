@@ -152,7 +152,7 @@ const logout = () => {
                             </Menu>
                         </div>
 
-                        <div class="w-full py-5 lg:border-t lg:border-white lg:border-gray-300">
+                        <div class="w-full py-10 lg:py-5 lg:border-t lg:border-white lg:border-gray-300">
                             <div class="lg:grid lg:grid-cols-3 lg:gap-8 lg:items-center">
                                 <!-- Left nav -->
                                 <div class="hidden lg:block lg:col-span-2">
