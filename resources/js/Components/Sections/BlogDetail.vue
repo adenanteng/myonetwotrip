@@ -17,7 +17,7 @@ const props = defineProps({
 <template>
 
     <div class="flex flex-col rounded-2xl border border-gray-300 shadow-lg overflow-hidden ">
-        <Link :href="'/artikel/' + props.slug">
+        <Link :href="route('blog.show', props.slug)">
             <div class="flex-shrink-0">
                 <img v-if="props.img[0]" class="h-60 w-full object-cover" :src="props.img[0].original_url"
                      alt=""/>

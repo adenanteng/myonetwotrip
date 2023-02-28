@@ -39,7 +39,7 @@ const submit = () => {
         </template>
 
         <template #title>
-            Belum punya akun? <Link class="underline text-sm text-gray-600 hover:text-gray-900" href="/register">Daftar</Link>
+            Belum punya akun? <Link class="underline text-sm text-gray-600 hover:text-gray-900" :href="route('register')">Daftar</Link>
         </template>
 
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">

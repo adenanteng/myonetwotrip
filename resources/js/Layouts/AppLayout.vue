@@ -158,35 +158,35 @@ const logout = () => {
                                 <div class="hidden lg:block lg:col-span-2">
                                     <nav class="flex space-x-4">
                                         <NavLinkAlt
-                                            href="/dashboard"
+                                            :href="route('dashboard')"
                                             :active="$page.url == '/'">
                                             Dasbor
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
-                                            href="/trip"
+                                            :href="route('trip.index')"
                                             :active="$page.url.startsWith('/trip')">
                                             Destinasi
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
-                                            href="/blog"
+                                            :href="route('blog.index')"
                                             :active="$page.url.startsWith('/blog')">
                                             Blog
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
-                                            href="/user"
+                                            :href="route('user.index')"
                                             :active="$page.url.startsWith('/user')">
                                             Pengguna
                                         </NavLinkAlt>
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
-                                            href="/setting"
+                                            :href="route('setting.index')"
                                             :active="$page.url.startsWith('/setting')">
                                             Pengaturan
                                         </NavLinkAlt>

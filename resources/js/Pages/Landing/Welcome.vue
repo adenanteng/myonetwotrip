@@ -52,7 +52,7 @@ function formatPrice(value) {
 
                                 <p class="text-gray-100 mt-3 text-base nightwind-prevent capitalize"><i class="fa-regular fa-location-dot mr-2" />{{ item.location }}, {{ item.city }}</p>
 
-                                <PrimaryButton class="mt-3" as="a" :href="'/destinasi/'+item.slug">
+                                <PrimaryButton class="mt-3" as="a" :href="route('trip.show', item)">
                                     Lihat Destinasi
                                 </PrimaryButton>
 

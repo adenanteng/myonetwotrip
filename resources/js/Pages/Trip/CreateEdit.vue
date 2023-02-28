@@ -16,7 +16,7 @@ import UpdateIncludeForm from "@/Pages/Trip/Partials/UpdateIncludeForm.vue";
                name="Paket Wisata"
                desc="lorem ipsum"
                action="Kembali"
-               href="/trip"
+               :href="route('trip.index')"
     >
 
         <div>

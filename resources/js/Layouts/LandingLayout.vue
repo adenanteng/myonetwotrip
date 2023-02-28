@@ -101,27 +101,27 @@ onMounted(() => {
 <!--                                        {{ menu.name }}-->
 <!--                                    </NavLink>-->
 <!--                                </template>-->
-                                <NavLink href="/" :active="$page.url == '/'" >
+                                <NavLink :href="route('landing.welcome')" :active="route().current('landing.welcome')" >
                                     Beranda
                                 </NavLink>
 
-                                <NavLink href="/bali" :active="$page.url.startsWith('/bali')" >
+                                <NavLink :href="route('landing.bali')" :active="$page.url.startsWith('/bali')" >
                                     Bali
                                 </NavLink>
 
-                                <NavLink href="/yogyakarta" :active="$page.url.startsWith('/yogyakarta')" >
+                                <NavLink :href="route('landing.yogyakarta')" :active="$page.url.startsWith('/yogyakarta')" >
                                     Yogyakarta
                                 </NavLink>
 
-                                <NavLink href="/nusa-tenggara-barat" :active="$page.url.startsWith('/nusa-tenggara-barat')" >
+                                <NavLink :href="route('landing.ntb')" :active="$page.url.startsWith('/nusa-tenggara-barat')" >
                                     Nusa Tenggara Barat
                                 </NavLink>
 
-                                <NavLink href="/malang" :active="$page.url.startsWith('/malang')" >
+                                <NavLink :href="route('landing.malang')" :active="$page.url.startsWith('/malang')" >
                                     Malang
                                 </NavLink>
 
-                                <NavLink href="/lampung" :active="$page.url.startsWith('/lampung')" >
+                                <NavLink :href="route('landing.lampung')" :active="$page.url.startsWith('/lampung')" >
                                     Lampung
                                 </NavLink>
 
@@ -255,14 +255,6 @@ onMounted(() => {
                         <ResponsiveNavLink :href="route('landing.lampung')" :active="$page.url.startsWith('/lampung')" >
                             Lampung
                         </ResponsiveNavLink>
-
-<!--                        <template v-for="menu in $page.props.navbarMenu">-->
-<!--                            <ResponsiveNavLink-->
-<!--                                :href="route('page.show', menu.slug)"-->
-<!--                                :active="$page.url == '/page/' + menu.slug">-->
-<!--                                {{ menu.name }}-->
-<!--                            </ResponsiveNavLink>-->
-<!--                        </template>-->
 
                     </div>
 

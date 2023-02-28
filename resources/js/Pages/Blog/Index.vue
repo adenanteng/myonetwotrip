@@ -92,7 +92,7 @@ const gridColumns = [
                name="Blog"
                desc="lorem ipsum"
                action="Tambah Blog"
-               href="/blog/create"
+               :href="route('blog.create')"
                >
 
         <form id="search">

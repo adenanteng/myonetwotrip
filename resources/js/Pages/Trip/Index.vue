@@ -41,7 +41,7 @@ const gridColumns = [
                name="Paket Wisata"
                desc="lorem ipsum"
                action="Tambah Paket"
-               href="trip/create"
+               :href="route('trip.create')"
     >
 
         <form id="search">
