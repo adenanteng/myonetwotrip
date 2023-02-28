@@ -171,11 +171,11 @@ function formatPrice(value) {
 
                                 <div class="my-5" >
                                     <p v-show="tab==1"
-                                        class="text-gray-600"
+                                        class="text-gray-500"
                                         v-html="trip.itinerary" />
 
                                     <p v-show="tab==2"
-                                       class="text-gray-600"
+                                       class="text-gray-500"
                                        v-html="trip.include" />
 
 <!--                                    <EditorContent-->
@@ -237,11 +237,11 @@ function formatPrice(value) {
 
                             <div class="my-5" >
                                 <p v-show="tab==1"
-                                   class="text-gray-600"
+                                   class="text-gray-500"
                                    v-html="trip.itinerary" />
 
                                 <p v-show="tab==2"
-                                   class="text-gray-600"
+                                   class="text-gray-500"
                                    v-html="trip.include" />
                             </div>
                         </div>
