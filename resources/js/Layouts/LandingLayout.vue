@@ -236,6 +236,26 @@ onMounted(() => {
                             Beranda
                         </ResponsiveNavLink>
 
+                        <ResponsiveNavLink :href="route('landing.bali')" :active="$page.url.startsWith('/bali')" >
+                            Bali
+                        </ResponsiveNavLink>
+
+                        <ResponsiveNavLink :href="route('landing.yogyakarta')" :active="$page.url.startsWith('/yogyakarta')" >
+                            Yogyakarta
+                        </ResponsiveNavLink>
+
+                        <ResponsiveNavLink :href="route('landing.ntb')" :active="$page.url.startsWith('/nusa-tenggara-barat')" >
+                            Nusa Tenggara Barat
+                        </ResponsiveNavLink>
+
+                        <ResponsiveNavLink :href="route('landing.malang')" :active="$page.url.startsWith('/malang')" >
+                            Malang
+                        </ResponsiveNavLink>
+
+                        <ResponsiveNavLink :href="route('landing.lampung')" :active="$page.url.startsWith('/lampung')" >
+                            Lampung
+                        </ResponsiveNavLink>
+
 <!--                        <template v-for="menu in $page.props.navbarMenu">-->
 <!--                            <ResponsiveNavLink-->
 <!--                                :href="route('page.show', menu.slug)"-->
