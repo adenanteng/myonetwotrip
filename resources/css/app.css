@@ -33,3 +33,7 @@
 strong {
     @apply text-gray-900;
 }
+
+ul {
+    @apply list-disc;
+}

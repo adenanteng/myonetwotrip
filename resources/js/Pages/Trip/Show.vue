@@ -97,56 +97,6 @@ const editorInclude = useEditor({
     editable: false,
 })
 
-const editorItineraryMobile = useEditor({
-    content: props.trip.itinerary,
-    editorProps: {
-        attributes: {
-            class: 'prose prose-sm text-sm text-gray-900',
-        },
-    },
-    extensions: [
-        StarterKit.configure({
-            paragraph: {
-                HTMLAttributes: {
-                    class: 'text-base text-gray-500',
-                },
-            },
-            Heading: {
-                HTMLAttributes: {
-                    class: 'text-gray-900',
-                },
-            },
-        })
-    ],
-    autofocus: false,
-    editable: false,
-})
-
-const editorIncludeMobile = useEditor({
-    content: props.trip.include,
-    editorProps: {
-        attributes: {
-            class: 'prose prose-sm text-sm text-gray-900',
-        },
-    },
-    extensions: [
-        StarterKit.configure({
-            paragraph: {
-                HTMLAttributes: {
-                    class: 'text-base text-gray-500',
-                },
-            },
-            Heading: {
-                HTMLAttributes: {
-                    class: 'text-gray-900',
-                },
-            },
-        })
-    ],
-    autofocus: false,
-    editable: false,
-})
-
 const tab = ref(1)
 
 function formatPrice(value) {
@@ -220,15 +170,23 @@ function formatPrice(value) {
                                 </nav>
 
                                 <div class="my-5" >
-                                    <EditorContent
-                                        v-show="tab==1"
-                                        :editor="editorItinerary"
-                                        required />
+                                    <p v-show="tab==1"
+                                        class="text-gray-600"
+                                        v-html="trip.itinerary" />
 
-                                    <EditorContent
-                                        v-show="tab==2"
-                                        :editor="editorInclude"
-                                        required />
+                                    <p v-show="tab==2"
+                                       class="text-gray-600"
+                                       v-html="trip.include" />
+
+<!--                                    <EditorContent-->
+<!--                                        v-show="tab==1"-->
+<!--                                        :editor="editorItinerary"-->
+<!--                                        required />-->
+
+<!--                                    <EditorContent-->
+<!--                                        v-show="tab==2"-->
+<!--                                        :editor="editorInclude"-->
+<!--                                        required />-->
                                 </div>
                             </div>
                         </div>
@@ -278,15 +236,13 @@ function formatPrice(value) {
                             </nav>
 
                             <div class="my-5" >
-                                <EditorContent
-                                    v-show="tab==1"
-                                    :editor="editorItineraryMobile"
-                                    required />
+                                <p v-show="tab==1"
+                                   class="text-gray-600"
+                                   v-html="trip.itinerary" />
 
-                                <EditorContent
-                                    v-show="tab==2"
-                                    :editor="editorIncludeMobile"
-                                    required />
+                                <p v-show="tab==2"
+                                   class="text-gray-600"
+                                   v-html="trip.include" />
                             </div>
                         </div>
                     </div>
