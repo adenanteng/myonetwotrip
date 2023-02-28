@@ -97,6 +97,56 @@ const editorInclude = useEditor({
     editable: false,
 })
 
+const editorItineraryMobile = useEditor({
+    content: props.trip.itinerary,
+    editorProps: {
+        attributes: {
+            class: 'prose prose-sm text-sm text-gray-900',
+        },
+    },
+    extensions: [
+        StarterKit.configure({
+            paragraph: {
+                HTMLAttributes: {
+                    class: 'text-base text-gray-500',
+                },
+            },
+            Heading: {
+                HTMLAttributes: {
+                    class: 'text-gray-900',
+                },
+            },
+        })
+    ],
+    autofocus: false,
+    editable: false,
+})
+
+const editorIncludeMobile = useEditor({
+    content: props.trip.include,
+    editorProps: {
+        attributes: {
+            class: 'prose prose-sm text-sm text-gray-900',
+        },
+    },
+    extensions: [
+        StarterKit.configure({
+            paragraph: {
+                HTMLAttributes: {
+                    class: 'text-base text-gray-500',
+                },
+            },
+            Heading: {
+                HTMLAttributes: {
+                    class: 'text-gray-900',
+                },
+            },
+        })
+    ],
+    autofocus: false,
+    editable: false,
+})
+
 const tab = ref(1)
 
 function formatPrice(value) {
@@ -156,8 +206,8 @@ function formatPrice(value) {
                             </template>
                         </Carousel>
 
-                        <div class="hidden sm:block">
-                            <div class="border-b border-gray-200">
+                        <div class="hidden lg:block">
+                            <div class="border-b border-gray-300">
                                 <nav class="-mb-px flex space-x-8" aria-label="Tabs">
                                     <button @click="tab=1"
                                             :class="[tab==1 ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300', 'whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm']">
@@ -210,6 +260,34 @@ function formatPrice(value) {
                                 :editor="editor"
                                 required />
 
+<!--                            <p v-html="trip.content"></p>-->
+                        </div>
+                    </div>
+
+                    <div class="block lg:hidden mt-10">
+                        <div class="">
+                            <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                                <button @click="tab=1"
+                                        :class="[tab==1 ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300', 'whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm']">
+                                    Itinerary
+                                </button>
+                                <button @click="tab=2"
+                                        :class="[tab==2 ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300', 'whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm']">
+                                    Tiket Sudah Termasuk
+                                </button>
+                            </nav>
+
+                            <div class="my-5" >
+                                <EditorContent
+                                    v-show="tab==1"
+                                    :editor="editorItineraryMobile"
+                                    required />
+
+                                <EditorContent
+                                    v-show="tab==2"
+                                    :editor="editorIncludeMobile"
+                                    required />
+                            </div>
                         </div>
                     </div>
 
