@@ -45,7 +45,7 @@ function formatPrice(value) {
                                 </h1>
                                 <p class="max-w-xl text-gray-100 text-base mt-1 nightwind-prevent">{{ item.desc }}</p>
 
-                                <p class="text-gray-100 mt-3">Mulai dari</p>
+                                <p class="text-gray-100 nightwind-prevent mt-3">Mulai dari</p>
                                 <h3 class="max-w-2xl text-white text-xl sm:text-3xl font-bold capitalize nightwind-prevent">
                                     Rp. {{ formatPrice(item.price) }} <span class="text-base font-normal">/ tiket</span>
                                 </h3>
