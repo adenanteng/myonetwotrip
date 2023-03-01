@@ -25,11 +25,13 @@ Route::get('/', [LandingController::class, 'welcome'])->name('landing.welcome');
 Route::get('/destinasi', [LandingController::class, 'trip'])->name('landing.destination');
 Route::get('/destinasi/{trip}', [TripController::class, 'show'])->name('trip.show');
 
-Route::get('/bali', [LandingController::class, 'tripBali'])->name('landing.bali');
-Route::get('/yogyakarta', [LandingController::class, 'tripYogyakarta'])->name('landing.yogyakarta');
-Route::get('/nusa-tenggara-barat', [LandingController::class, 'tripNtb'])->name('landing.ntb');
-Route::get('/malang', [LandingController::class, 'tripMalang'])->name('landing.malang');
-Route::get('/lampung', [LandingController::class, 'tripLampung'])->name('landing.lampung');
+Route::get('/opentrip', [LandingController::class, 'tripOpentrip'])->name('landing.opentrip');
+
+Route::get('/kota/bali', [LandingController::class, 'tripBali'])->name('landing.bali');
+Route::get('/kota/yogyakarta', [LandingController::class, 'tripYogyakarta'])->name('landing.yogyakarta');
+Route::get('/kota/nusa-tenggara-barat', [LandingController::class, 'tripNtb'])->name('landing.ntb');
+Route::get('/kota/malang', [LandingController::class, 'tripMalang'])->name('landing.malang');
+Route::get('/kota/lampung', [LandingController::class, 'tripLampung'])->name('landing.lampung');
 
 Route::get('/artikel', [LandingController::class, 'blog'])->name('landing.blog');
 Route::get('/artikel/{blog}', [BlogController::class, 'show'])->name('blog.show');

@@ -12,13 +12,7 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import DarkmodeToggle from "@/Components/DarkmodeToggle.vue";
 import Footer from "@/Components/Sections/Footer.vue";
-
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import SecondaryButton from '@/Components/SecondaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import TextAreaInput from "@/Components/TextAreaInput.vue";
-import SelectInput from "@/Components/SelectInput.vue";
+import FlyoutMenu from "@/Components/FlyoutMenu.vue";
 
 const props = defineProps({
     title: String,
@@ -66,6 +60,39 @@ onMounted(() => {
     });
 });
 
+const destination = [
+    {
+        name: 'Bali',
+        desc: 'Measure actions your users take',
+        href: '/kota/bali',
+        icon: 'fa-mountains',
+    },
+    {
+        name: 'Yogyakarta',
+        desc: 'Create your own targeted content',
+        href: '/kota/yogyakarta',
+        icon: 'fa-mountains',
+    },
+    {
+        name: 'Nusa Tenggara Barat',
+        desc: 'Keep track of your growth',
+        href: '/kota/nusa-tenggara-barat',
+        icon: 'fa-mountains',
+    },
+    {
+        name: 'Malang',
+        desc: 'Create your own targeted content',
+        href: '/kota/malang',
+        icon: 'fa-mountains',
+    },
+    {
+        name: 'Lampung',
+        desc: 'Keep track of your growth',
+        href: '/kota/lampung',
+        icon: 'fa-mountains',
+    },
+]
+
 </script>
 
 <template>
@@ -95,42 +122,43 @@ onMounted(() => {
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 lg:flex">
-<!--                                <template v-for="menu in $page.props.navbarMenu">-->
-<!--                                    <NavLink :href="route('page.show', menu.slug)"-->
-<!--                                             :active="$page.url == '/page/' + menu.slug">-->
-<!--                                        {{ menu.name }}-->
-<!--                                    </NavLink>-->
-<!--                                </template>-->
                                 <NavLink :href="route('landing.welcome')" :active="route().current('landing.welcome')" >
                                     Beranda
                                 </NavLink>
 
-                                <NavLink :href="route('landing.bali')" :active="$page.url.startsWith('/bali')" >
-                                    Bali
+<!--                                <NavLink :href="route('landing.opentrip')" :active="route().current('landing.opentrip')" >-->
+<!--                                    Opentrip-->
+<!--                                </NavLink>-->
+
+                                <NavLink :active="$page.url.startsWith('/kota')">
+                                    <FlyoutMenu
+                                        title="Destinasi"
+                                        :data="destination"
+                                    />
                                 </NavLink>
 
-                                <NavLink :href="route('landing.yogyakarta')" :active="$page.url.startsWith('/yogyakarta')" >
-                                    Yogyakarta
-                                </NavLink>
+<!--                                <NavLink :href="route('landing.bali')" :active="$page.url.startsWith('/bali')" >-->
+<!--                                    Bali-->
+<!--                                </NavLink>-->
 
-                                <NavLink :href="route('landing.ntb')" :active="$page.url.startsWith('/nusa-tenggara-barat')" >
-                                    Nusa Tenggara Barat
-                                </NavLink>
+<!--                                <NavLink :href="route('landing.yogyakarta')" :active="$page.url.startsWith('/yogyakarta')" >-->
+<!--                                    Yogyakarta-->
+<!--                                </NavLink>-->
 
-                                <NavLink :href="route('landing.malang')" :active="$page.url.startsWith('/malang')" >
-                                    Malang
-                                </NavLink>
+<!--                                <NavLink :href="route('landing.ntb')" :active="$page.url.startsWith('/nusa-tenggara-barat')" >-->
+<!--                                    Nusa Tenggara Barat-->
+<!--                                </NavLink>-->
 
-                                <NavLink :href="route('landing.lampung')" :active="$page.url.startsWith('/lampung')" >
-                                    Lampung
-                                </NavLink>
+<!--                                <NavLink :href="route('landing.malang')" :active="$page.url.startsWith('/malang')" >-->
+<!--                                    Malang-->
+<!--                                </NavLink>-->
+
+<!--                                <NavLink :href="route('landing.lampung')" :active="$page.url.startsWith('/lampung')" >-->
+<!--                                    Lampung-->
+<!--                                </NavLink>-->
 
 <!--                                <NavLink :href="route('landing.blog')" :active="route().current('landing.blog')" >-->
 <!--                                    Artikel-->
-<!--                                </NavLink>-->
-
-<!--                                <NavLink :href="route('landing.destination')" :active="route().current('landing.destination')" >-->
-<!--                                    Destinasi-->
 <!--                                </NavLink>-->
 
                             </div>
@@ -357,6 +385,32 @@ onMounted(() => {
 
                 <slot />
             </main>
+
+            <div class="fixed inset-x-0 bottom-0 nightwind-prevent-block">
+                <div class="bg-primary-600 bg-opacity-50 backdrop-blur">
+                    <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+                        <div class="flex items-center justify-between flex-wrap">
+                            <div class="w-0 flex-1 flex items-center">
+                                <span class="flex p-2 rounded-lg bg-indigo-800">
+                                    <i class="fa-regular fa-bullhorn text-white" />
+                                </span>
+                                <p class="ml-3 font-medium text-white truncate">
+                                    <span class="md:hidden">Website dalam tahap pengembangan! </span>
+                                    <span class="hidden md:inline">Website ini masih dalam tahap pengembangan. </span>
+                                </p>
+                            </div>
+<!--                            <div class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">-->
+<!--                                <a href="#" class="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-white hover:bg-indigo-50"> Learn more </a>-->
+<!--                            </div>-->
+<!--                            <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">-->
+<!--                                <button type="button" class="-mr-1 flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">-->
+<!--                                    <i class="fa-regular fa-x text-white" />-->
+<!--                                </button>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <Footer />
         </div>
