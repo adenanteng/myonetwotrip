@@ -32,7 +32,7 @@ const props = defineProps({
                 class="absolute left-80 z-10 mt-5 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl"
             >
                 <div
-                    class="overflow-hidden rounded-2xl shadow-lg"
+                    class="overflow-hidden rounded-2xl shadow-lg border border-gray-300"
                 >
                     <div class="relative grid gap-8 bg-white bg-opacity-50 backdrop-blur p-7 lg:grid-cols-2">
                         <Link
