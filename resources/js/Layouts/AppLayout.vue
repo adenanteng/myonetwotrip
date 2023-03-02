@@ -159,7 +159,7 @@ const logout = () => {
                                     <nav class="flex space-x-4">
                                         <NavLinkAlt
                                             :href="route('dashboard')"
-                                            :active="$page.url == '/'">
+                                            :active="$page.url == '/dashboard'">
                                             Dasbor
                                         </NavLinkAlt>
 
@@ -307,8 +307,39 @@ const logout = () => {
                                         <div class="mt-3 px-2 space-y-1">
                                             <ResponsiveNavLink :href="route('dashboard')"
                                                                :active="route().current('dashboard')">
-                                                Dashboard
+                                                Dasbor
                                             </ResponsiveNavLink>
+
+                                            <ResponsiveNavLink :href="route('trip.index')"
+                                                               :active="$page.url.startsWith('/trip')"
+                                                               v-if="$page.props.user.role_id==1">
+                                                Destinasi
+                                            </ResponsiveNavLink>
+
+                                            <ResponsiveNavLink :href="route('gallery.index')"
+                                                               :active="$page.url.startsWith('/gallery')"
+                                                               v-if="$page.props.user.role_id==1">
+                                                Galeri
+                                            </ResponsiveNavLink>
+
+                                            <ResponsiveNavLink :href="route('blog.index')"
+                                                               :active="$page.url.startsWith('/blog')"
+                                                               v-if="$page.props.user.role_id==1">
+                                                Blog
+                                            </ResponsiveNavLink>
+
+                                            <ResponsiveNavLink :href="route('user.index')"
+                                                               :active="$page.url.startsWith('/user')"
+                                                               v-if="$page.props.user.role_id==1">
+                                                Pengguna
+                                            </ResponsiveNavLink>
+
+                                            <ResponsiveNavLink :href="route('setting.index')"
+                                                               :active="$page.url.startsWith('/setting')"
+                                                               v-if="$page.props.user.role_id==1">
+                                                Pengaturan
+                                            </ResponsiveNavLink>
+
                                         </div>
                                     </div>
                                     <div class="pt-4 pb-2">
@@ -328,6 +359,12 @@ const logout = () => {
                                             </div>
                                         </div>
                                         <div class="mt-3 px-2 space-y-1">
+
+                                            <ResponsiveNavLink :href="route('landing.welcome')"
+                                                               :active="route().current('landing.welcome')">
+                                                Beranda
+                                            </ResponsiveNavLink>
+
                                             <ResponsiveNavLink :href="route('profile.show')"
                                                                :active="route().current('profile.show')">
                                                 Profil

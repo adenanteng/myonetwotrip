@@ -33,7 +33,7 @@ const props = defineProps({
                 <!--                        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Our Team</h2>-->
                 <!--                        <p class="text-xl text-gray-500">Odio nisi, lectus dis nulla. Ultrices maecenas vitae rutrum dolor ultricies donec risus sodales. Tempus quis et.</p>-->
                 <!--                    </div>-->
-                <ul role="list" class="sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3 list-none">
+                <ul role="list" class="sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-3 list-none">
                     <template v-for="item in props.gallery" :key="item.name">
                         <Link :href="route('gallery.edit', item)">
                         <li class="my-5 sm:my-0 nightwind-prevent-block">

@@ -310,15 +310,20 @@ const destination = [
                         <div class="space-y-1">
                             <!-- Team Management -->
                             <template v-if="$page.props.user">
+                                <ResponsiveNavLink :href="route('dashboard')"
+                                                   :active="route().current('dashboard')">
+                                    Dasbor
+                                </ResponsiveNavLink>
+
                                 <ResponsiveNavLink :href="route('profile.show')"
                                                    :active="route().current('profile.show')">
-                                    Profile
+                                    Profil
                                 </ResponsiveNavLink>
 
                                 <!-- Authentication -->
                                 <form method="POST" @submit.prevent="logout">
                                     <ResponsiveNavLink as="button">
-                                        Log Out
+                                        Keluar
                                     </ResponsiveNavLink>
                                 </form>
 
