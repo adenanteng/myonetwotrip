@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AppSettingController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\UserController;
@@ -36,6 +37,8 @@ Route::get('/kota/lampung', [LandingController::class, 'tripLampung'])->name('la
 Route::get('/artikel', [LandingController::class, 'blog'])->name('landing.blog');
 Route::get('/artikel/{blog}', [BlogController::class, 'show'])->name('blog.show');
 
+Route::get('/galeri', [LandingController::class, 'gallery'])->name('landing.gallery');
+
 Route::get('/blank', [WelcomeController::class, 'blank'])->name('blank');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
@@ -60,6 +63,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
     Route::resource('/user', UserController::class)->names('user');
     Route::post('/user/reset-password/{user}', [UserController::class, 'resetPassword'])->name('user.passwordReset');
+
+    Route::resource('/gallery', GalleryController::class)->names('gallery');
 
     Route::resource('/setting', AppSettingController::class)->names('setting');
 });

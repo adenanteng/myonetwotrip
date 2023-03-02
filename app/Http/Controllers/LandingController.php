@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Gallery;
 use App\Models\Page;
 use App\Models\PageCta;
 use App\Models\PageFeature;
@@ -56,6 +57,19 @@ class LandingController extends Controller
 //        dd(Blog::all());
         return Inertia::render('Landing/Blog', [
             'blog' => Blog::all()
+        ]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function gallery(): Response
+    {
+//        dd(Blog::all());
+        return Inertia::render('Landing/Gallery', [
+            'gallery' => Gallery::all()
         ]);
     }
 
@@ -136,6 +150,22 @@ class LandingController extends Controller
             'desc' => 'Lorem ipsum',
             'img' => '/img/lampung.jpg',
             'trip' => Trip::where('city_id', Trip::LAMPUNG)->get()
+        ]);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function tripOpentrip(): Response
+    {
+//        dd(Trip::all());
+        return Inertia::render('Landing/Trip', [
+            'title' => 'Opentrip',
+            'desc' => 'Lorem ipsum',
+            'img' => '/img/nusa-penida.jpg',
+            'trip' => Trip::where('category_id', Trip::TRIP)->get()
         ]);
     }
 

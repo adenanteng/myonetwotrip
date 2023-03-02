@@ -37,10 +37,12 @@ class Trip extends Model implements HasMedia
     const TRIP = 1;
     const HONEY = 2;
     const EVENT = 3;
+    const RENT_CAR = 4;
     const CATEGORY = [
-        self::TRIP => 'Paket Wisata',
-        self::HONEY => 'Paket Bulan Madu',
-        self::EVENT => 'Event'
+        self::TRIP => 'Opentrip',
+        self::HONEY => 'Bulan Madu',
+        self::EVENT => 'Event',
+        self::RENT_CAR => 'Rental Mobil'
     ];
 
     const BALI = 1;

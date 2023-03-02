@@ -137,6 +137,9 @@ const destination = [
                                     />
                                 </NavLink>
 
+                                <NavLink :href="route('landing.gallery')" :active="$page.url.startsWith('/galeri')" >
+                                    Galeri
+                                </NavLink>
 <!--                                <NavLink :href="route('landing.bali')" :active="$page.url.startsWith('/bali')" >-->
 <!--                                    Bali-->
 <!--                                </NavLink>-->
@@ -369,9 +372,21 @@ const destination = [
 
             <main class="">
                 <div v-if="props.header" class=" relative ">
+<!--                    &lt;!&ndash; Start Home &ndash;&gt;-->
+<!--                    <section class="relative">-->
+<!--                        <img class="object-cover w-full h-screen " :src="props.img">-->
+
+<!--                        <div class="absolute inset-0 h-full w-full bg-gradient-to-t to-transparent from-gray-100 dark:from-gray-800"></div>-->
+
+<!--                        <div class="absolute text-center p-6 bottom-0 left-0 right-0">-->
+<!--                            <h3 class="md:text-3xl md:leading-normal text-2xl leading-normal font-bold text-gray-900">{{ props.header }}</h3>-->
+<!--                        </div>-->
+<!--                    </section>&lt;!&ndash;end section&ndash;&gt;-->
+<!--                    &lt;!&ndash; End Home &ndash;&gt;-->
+
                     <img class="object-cover w-full h-screen " :src="props.img">
 
-                    <div class="absolute w-full bottom-0 top-0 flex justify-center items-center bg-gradient-to-tr from-gray-900 dark:from-gray-900">
+                    <div class="absolute w-full bottom-0 top-0 flex justify-center items-center bg-gradient-to-tr to-transparent from-gray-800 dark:from-gray-800">
                         <div class="text-left justify-start max-w-screen-xl w-full px-10 2xl:px-0">
                             <h1 class="max-w-2xl text-white text-4xl lg:text-6xl font-bold capitalize nightwind-prevent">
                                 {{ props.header }}

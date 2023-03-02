@@ -172,6 +172,13 @@ const logout = () => {
 
                                         <NavLinkAlt
                                             v-if="$page.props.user.role_id==1"
+                                            :href="route('gallery.index')"
+                                            :active="$page.url.startsWith('/gallery')">
+                                            Galeri
+                                        </NavLinkAlt>
+
+                                        <NavLinkAlt
+                                            v-if="$page.props.user.role_id==1"
                                             :href="route('blog.index')"
                                             :active="$page.url.startsWith('/blog')">
                                             Blog

@@ -38,7 +38,7 @@ function formatPrice(value) {
                             <i class="fa-duotone fa-image text-primary-600 text-7xl"/>
                         </span>
 
-                        <div class="absolute px-10 w-full bottom-0 top-0 flex justify-center items-center bg-gradient-to-tr from-gray-900 dark:from-gray-900 transition duration-1000">
+                        <div class="absolute px-10 w-full bottom-0 top-0 flex justify-center items-center bg-gradient-to-tr to-transparent from-gray-900 dark:from-gray-900 transition duration-1000">
                             <div class="text-left justify-start max-w-screen-xl w-full">
                                 <h1 class="max-w-2xl text-white text-4xl sm:text-6xl font-bold capitalize nightwind-prevent">
                                     {{ item.name }}
@@ -78,7 +78,7 @@ function formatPrice(value) {
             </template>
         </Carousel>
 
-<!--        <heroVideo-->
+        <!--        <heroVideo-->
 <!--            name="aduh"-->
 <!--            desc="hahhaha"-->
 <!--            video="/video/video.mp4"-->
