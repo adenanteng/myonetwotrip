@@ -137,9 +137,9 @@ const destination = [
                                     />
                                 </NavLink>
 
-                                <NavLink :href="route('landing.gallery')" :active="$page.url.startsWith('/galeri')" >
-                                    Galeri
-                                </NavLink>
+<!--                                <NavLink :href="route('landing.gallery')" :active="$page.url.startsWith('/galeri')" >-->
+<!--                                    Galeri-->
+<!--                                </NavLink>-->
 <!--                                <NavLink :href="route('landing.bali')" :active="$page.url.startsWith('/bali')" >-->
 <!--                                    Bali-->
 <!--                                </NavLink>-->

@@ -4,7 +4,7 @@ import {Link} from '@inertiajs/inertia-vue3';
 
 const navigation = {
     main: [
-        { name: 'Tentang Kami', href: '#' },
+        { name: 'Galeri', href: '/galeri' },
         { name: 'Artikel', href: '/artikel' },
         { name: 'Karir', href: '#' },
         { name: 'Kemitraan', href: '#' },
