@@ -10,7 +10,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.min.css') }}">
 
         <script>
@@ -26,12 +25,13 @@
 
         <!-- Scripts -->
         @routes
-        <script>
-            Ziggy.url = '{{ env('APP_URL') }}'
-        </script>
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
 
         @inertiaHead
+
+        <script>
+            Ziggy.url = '{{ env('APP_URL') }}'
+        </script>
     </head>
     <body class="font-sans antialiased">
         @inertia

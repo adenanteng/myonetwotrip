@@ -54,7 +54,7 @@ class Trip extends Model implements HasMedia
     const CITY = [
         self::BALI => 'Bali',
         self::YOGYAKARTA => 'Yogyakarta',
-        self::NTB => 'Nusa tenggara Barat',
+        self::NTB => 'Nusa Tenggara Barat',
         self::LAMPUNG => 'Lampung',
         self::SURABAYA => 'Surabaya',
         self::MALANG => 'Malang',
