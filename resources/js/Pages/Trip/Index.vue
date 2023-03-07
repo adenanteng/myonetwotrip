@@ -1,18 +1,6 @@
-<script setup xmlns="http://www.w3.org/1999/html">
-import {Head, Link, useForm} from '@inertiajs/inertia-vue3';
-import LandingLayout from "@/Layouts/LandingLayout.vue";
+<script setup>
 import AppLayout from "@/Layouts/AppLayout.vue";
-import ActionMessage from '@/Components/ActionMessage.vue';
-import FormSection from '@/Components/FormSection.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import SecondaryButton from '@/Components/SecondaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
-import TextAreaInput from "@/Components/TextAreaInput.vue";
-import Dropdown from '@/Components/Dropdown.vue';
-import DropdownLink from '@/Components/DropdownLink.vue';
-import Heading from "@/Components/Heading.vue";
 import {ref} from "vue";
 import Table from "@/Components/Table.vue";
 

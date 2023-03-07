@@ -1,8 +1,5 @@
 <script setup>
 import LandingLayout from "@/Layouts/LandingLayout.vue";
-import Cta from "@/Components/Sections/Cta.vue";
-import Trip from "@/Components/Sections/Trip.vue";
-import TripDetail from "@/Components/Sections/TripDetail.vue";
 import 'vue3-carousel/dist/carousel.css';
 import {Carousel, Slide, Pagination, Navigation} from 'vue3-carousel';
 import PrimaryButton from "@/Components/PrimaryButton.vue";

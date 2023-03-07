@@ -11,7 +11,7 @@ import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import PrimaryButton from "@/Components/PrimaryButton.vue";
 import DarkmodeToggle from "@/Components/DarkmodeToggle.vue";
-import Footer from "@/Components/Sections/Footer.vue";
+import Footer from "@/Components/Footer.vue";
 import FlyoutMenu from "@/Components/FlyoutMenu.vue";
 
 const props = defineProps({

@@ -4,22 +4,8 @@ import LandingLayout from "@/Layouts/LandingLayout.vue";
 
 import 'vue3-carousel/dist/carousel.css'
 import {Carousel, Slide, Pagination, Navigation} from 'vue3-carousel'
-import Footer from "@/Components/Sections/Footer.vue";
-import {ref} from "vue";
 import {Editor, EditorContent, useEditor} from '@tiptap/vue-3'
 import StarterKit from "@tiptap/starter-kit";
-import Heading from "@tiptap/extension-heading";
-import Paragraph from "@tiptap/extension-paragraph"
-import Text from "@tiptap/extension-text"
-import {Document} from "@tiptap/extension-document";
-
-
-const stats = [
-    { label: 'Founded', value: '2021' },
-    { label: 'Employees', value: '5' },
-    { label: 'Beta Users', value: '521' },
-    { label: 'Raised', value: '$25M' },
-]
 
 const props = defineProps({
     blog: Object,
